@@ -1,0 +1,30 @@
+Components Plan:
+
+<Header />:
+
+-contains the logo 
+- contains the search bar
+- search bar has local state
+- on submit the search bars local state updates the "reddit: searchTerm" state in store
+
+<Posts />:
+
+- The main body which contains all of the Posts
+- Maps through the posts state and returns a Post component for each, keyed with some unique ID from each posts state. 
+- Posts component accesses the posts state from store - passing to each Post component as props
+- Minimum props Post will need - post title, vote count, thumbnail, post author, posted at/ago time, comments
+
+
+<Post />:
+
+- Renders the post using props passed from posts container
+- Can layout the component as a grid with 1 row and 2 columns (1fr 4fr). Then vote box goes in left column, rest of content goes in right column.
+- Each column of the grid is a flexbox with direction column
+- Left side is one element - the voting card. Right side is three elements - title, thumbnail, footer *might be a good idea to split each element of the post into seperate components at some point*
+- Will have local state which holds vote count - equal to vote count grabbed from state on Renders
+- Functions to handle up/downvotes and update local state as such
+
+<Subreddits />
+
+- A container which has all of my Subreddits
+- Will map through the Subreddits contained in the "subreddits" state
