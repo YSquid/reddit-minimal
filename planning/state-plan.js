@@ -129,26 +129,28 @@ const state = {
         num_comments: 0,
         url: "",
         selftext: "",
-        subreddit_name_prefixed: '',
+        subreddit_name_prefixed: "",
         comments: [
-            {
-                subreddit_id: '',
-                id: '',
-                author: '',
-                created_utc: 0,
-                parent_id: '', //this corresponts to the name key in posts e.g. 't3_yeyojs'
-                body: '',
-                
-            },
-            {/*...*/},
-            {/*...*/}
-
+          {
+            subreddit_id: "",
+            id: "",
+            author: "",
+            created_utc: 0,
+            parent_id: "", //this corresponts to the name key in posts e.g. 't3_yeyojs'
+            body: "",
+          },
+          {
+            /*...*/
+          },
+          {
+            /*...*/
+          },
         ],
 
         showingComments: false,
         loadingComments: false,
         errorComments: false,
-        error: false
+        error: false,
       },
       {
         /*...*/
@@ -164,7 +166,24 @@ const state = {
   },
 
   subreddits: {
-    subreddits: [{}],
+    subreddits: [
+      {
+        display_name: '',
+        title: '',
+        header_img: '',
+        icon_size: [0,0],
+        icon_img: '',
+        display_name_prefixed: 'r/...',
+        name: '',
+        public_description: ''
+      },
+      {
+        /*...*/
+      },
+      {
+        /*...*/
+      },
+    ],
     isLoading: false,
     errorLoading: false,
   },
