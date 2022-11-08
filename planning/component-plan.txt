@@ -20,9 +20,15 @@ Components Plan:
 - Renders the Post using props passed from <Posts/> container
 - Can layout the component as a grid with 1 row and 2 columns (1fr 4fr). Then vote box goes in left column, rest of content goes in right column.
 - Each column of the grid is a flexbox with direction column
-- Left side is one element - the voting card. Right side is three elements - title, thumbnail, footer *might be a good idea to split each element of the post into seperate components at some point*
+- Left side is one element - the voting card. Right side is three elements - title, thumbnail, footer (author, time posted, comments toggle) *might be a good idea to split each element of the post into seperate components at some point*
 - Will have local state which holds vote count - equal to vote count grabbed from state on renders
 - Functions to handle up/downvotes and update local state as such
+- The comments button will update a show comments local state. Comments are condtionally rendered based on this state
+
+<Comments />
+- Rendered inside each post element
+- Passed the comments comments piece of state from its post parent
+- Conditonal rendering based on the state of the show comments state in parent post element
 
 <Subreddits />
 
