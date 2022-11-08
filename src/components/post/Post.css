@@ -1,0 +1,38 @@
+.Post {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-template-areas: 
+    'votes body';
+}
+
+.Votes {
+    grid-area: votes;
+    text-align: center;
+    font-size: 3rem;
+    margin: auto;
+}
+
+.postBody {
+    grid-area: body;
+    padding: 1rem;
+}
+
+.postTitle {
+    font-size: 2rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+}
+
+.postPreview {
+    width: 100%;
+}
+.postPreview > img{
+    width: 100%;
+}
+
+.postFooter {
+    display: flex;
+    justify-content: space-between;
+    padding: .75rem 1.25rem;
+}
+
