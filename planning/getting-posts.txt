@@ -1,0 +1,5 @@
+1. Create a function that fetches a posts array from the reddit API using fetch - how do I only grab X amount of posts?
+2. Call the fetching posts function with useEffect on load
+3. Create a redditSlice - one of its properties is posts
+4. Have an addPost action which takes a post payload (one of the items in my post array) and creates the post in state (see topicsSlice example for flashcards)
+5. After I fetch the posts, dispatch the addPost action for each post in the array
