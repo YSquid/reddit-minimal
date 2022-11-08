@@ -7,6 +7,8 @@ Components Plan:
 - search bar has local state
 - on submit the search bars local state updates the "reddit: searchTerm" state in store
 
+-No state slice
+
 <Posts />:
 
 - The main body which contains all of the Posts
@@ -14,6 +16,7 @@ Components Plan:
 - <Posts/> component accesses the "posts" state from store - passing to each <Post/> component as props
 - Minimum props <Post/> will need - post title, vote count, thumbnail, post author, posted at/ago time, comments
 
+* State slice: posts
 
 <Post />:
 
@@ -25,10 +28,15 @@ Components Plan:
 - Functions to handle up/downvotes and update local state as such
 - The comments button will update a show comments local state. Comments are condtionally rendered based on this state
 
+* no state slice (state passed from the rendering posts component)
+
 <Comments />
 - Rendered inside each post element
 - Passed the comments comments piece of state from its post parent
 - Conditonal rendering based on the state of the show comments state in parent post element
+
+* no state slice (state passed from the rendering post component)
+
 
 <Subreddits />
 
@@ -36,3 +44,5 @@ Components Plan:
 - Will map through the subreddits contained in the "subreddits" state and render a <Subreddit /> component
 - Passes props to each <Subreddit /> component.
 - Minimum props needed to pass to each <Subreddit /> component - subreddit name, subreddit r/xyz path, subreddit icon
+
+* state slice - comments
