@@ -1,9 +1,15 @@
-import './App.css';
+import "./App.css";
+import Header from "../components/header/Header";
+import Posts from "../components/posts/Posts";
+import Subreddits from "../components/subreddits/Subreddits";
 
 function App() {
+  
   return (
     <div className="App">
-      <h1>Hello Reddit minimal</h1>
+        <Header />
+        <Posts />
+        <Subreddits />
     </div>
   );
 }
