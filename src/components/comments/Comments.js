@@ -1,8 +1,12 @@
 import React from 'react'
+import './Comments.css'
 
-function Comments() {
+function Comments(props) {
   return (
-    <div>Comments</div>
+    <div className='Comments'>
+    <h3>Comment Author</h3>
+    <p>comment body lorum ipusum dole est comos truey fbray brag</p>
+    </div>
   )
 }
 

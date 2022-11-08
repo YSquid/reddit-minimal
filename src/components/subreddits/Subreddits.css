@@ -1,6 +1,9 @@
 .Subreddits {
     background-color: lightcoral;
     grid-area: subreddits;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 40rem;
     margin: 1rem 0 0;
     

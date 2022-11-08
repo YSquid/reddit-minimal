@@ -15,6 +15,8 @@
 .postBody {
     grid-area: body;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .postTitle {
@@ -32,7 +34,14 @@
 
 .postFooter {
     display: flex;
+    font-size: 1rem;
     justify-content: space-between;
     padding: .75rem 1.25rem;
+}
+
+.commentsToggle {
+    display: flex;
+    font-size: 1rem;
+    background-color: transparent;
 }
 

@@ -45,4 +45,10 @@ Components Plan:
 - Passes props to each <Subreddit /> component.
 - Minimum props needed to pass to each <Subreddit /> component - subreddit name, subreddit r/xyz path, subreddit icon
 
-* state slice - comments
+* state slice - subreddits
+
+<Subreddit />
+
+-Rendered inside the subreddits component
+-Each subreddit will get its name and image from state
+-Clicking each subreddit will dispatch an action to store to filter posts only by matching that subreddit
