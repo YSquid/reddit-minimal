@@ -2,4 +2,31 @@
     background-color: lightgrey;
     grid-area: header;
     height: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#mainLogo {
+margin-left: -35rem;
+padding: 0.25rem 0;
+}
+
+#searchForm {
+   margin-left: -20rem; 
+   width: 35rem;
+   display: flex;
+   padding: .25rem 0;
+}
+
+#searchBar {
+    width: 100%;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin-right: 0.5rem
+}
+
+#searchIcon {
+    font-size: 2rem;
+    background-color: transparent;
+    padding-top: 0.1rem;
 }
