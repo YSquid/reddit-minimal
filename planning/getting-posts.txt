@@ -3,3 +3,7 @@
 3. Create a redditSlice - one of its properties is posts
 4. Have an addPost action which takes a post payload (one of the items in my post array) and creates the post in state (see topicsSlice example for flashcards)
 5. After I fetch the posts, dispatch the addPost action for each post in the array
+
+From what I can tell I can make a request to something like reddit.com/r/pics.json and get the raw JSON for that page
+The page will have a "Listing" whose "data" property then holds the posts. The data prop has a few different things, but the one I care about it "children" which reutrns an array of objects. 
+Each object has "kind", and data - the data about each post. 
