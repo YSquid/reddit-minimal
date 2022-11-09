@@ -9,8 +9,11 @@ function Posts() {
   const [posts, setPosts] = useState([]);
   const dispatch = useDispatch();
 
+  //setup local state to track what subreddit is being searched (searchedSubreddit)
+
   //define async function inside useEffect callback, local state set inside async callback
   //then call the function inside useEffect
+  //update useEffect so that is runs again on update to searchedSubbreddit. Update endpoint based on searchSubreddit
   useEffect(() => {
     const getPosts = async () => {
       const endpoint = "https://www.reddit.com/r/pics.json";
@@ -18,8 +21,10 @@ function Posts() {
       const raw = await response.json();
       const posts = raw.data.children;
       setPosts(posts);
-      const postData = posts[0].data;
-      dispatch(addPost(postData));
+      // dispatch(addPost(posts[0].data));
+      posts.forEach((post) => {
+        dispatch(addPost(post.data))
+      })
     };
 
     getPosts();
