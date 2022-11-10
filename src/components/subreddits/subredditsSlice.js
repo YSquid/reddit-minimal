@@ -1,17 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
-import JSthumbnail from '../../assets/JSthumbnail.png'
-import ARthumnail from '../../assets/question-icon.png'
+import JSicon from '../../assets/JSthumbnail.png'
+import ARicon from '../../assets/question-icon.png'
+import PHicon from '../../assets/PH-icon.jpg'
 
-//maybe initial state for subreddits array should be empty and I hard code what to load in my useEffect?
+
 const initialState = {
     subreddits: [
         {
             subreddit: 'javascript',
-            icon: JSthumbnail
+            icon: JSicon
         },
         {
             subreddit: 'AskReddit',
-            icon: ARthumnail
+            icon: ARicon
+        },
+        {
+            subreddit: 'ProgrammerHumor',
+            icon: PHicon
         }
     ],
     isLoading: false,

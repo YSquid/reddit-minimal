@@ -28,9 +28,16 @@ export const redditSlice = createSlice({
       },
     },
   },
+
+  updateSelectedSubreddit: {
+    reducer: (state, action) => {
+      const {selectedSubreddit} = action.payload
+      state.selectedSubreddit = selectedSubreddit
+    }
+  }
 });
 
-export const { addPost } = redditSlice.actions; //addPost action
+export const { addPost, updateSelectedSubreddit } = redditSlice.actions; //addPost action
 
 //selectors for each prop in redditSlice
 export const selectPosts = (state) => state.reddit.posts;
