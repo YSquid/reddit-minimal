@@ -4,8 +4,8 @@
 
  *how do I get JSON of subreddit info*
 
-3. useSelector to select subreddits state in Subreddits component
-4. Map through subreddits state to map subreddit state to Subreddit Components 
+3. useSelector to select subreddits state in Subreddits component DONE
+4. Map through subreddits state to map subreddit state to Subreddit Components DONE 
 
 **Updating selectedSubreddit state**
 

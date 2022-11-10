@@ -7,15 +7,15 @@ import PHicon from '../../assets/PH-icon.jpg'
 const initialState = {
     subreddits: [
         {
-            subreddit: 'javascript',
+            subredditTitle: 'javascript',
             icon: JSicon
         },
         {
-            subreddit: 'AskReddit',
+            subredditTitle: 'AskReddit',
             icon: ARicon
         },
         {
-            subreddit: 'ProgrammerHumor',
+            subredditTitle: 'ProgrammerHumor',
             icon: PHicon
         }
     ],
