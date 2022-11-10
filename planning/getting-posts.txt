@@ -12,4 +12,9 @@ Next steps to flesh it out:
 
 1) How do I access a higher quality preview image? use the url as the preview image - if gallery show nothing. DONE
 2) Add votes count, time added, to state DONE
-3) Convert time in UNIX to 'x hours, days, months' etc ago. 
+3) Convert time in UNIX to 'x hours, days, months' etc ago.  DONE
+
+
+Updating preview rules:
+
+1. Change the conditional so that showUrl is true is post.url contains either .jpg or .png

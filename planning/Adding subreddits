@@ -1,0 +1,13 @@
+Rendering the subs
+
+1. Create a subreddits slice
+2. Give it an initial state with 5 subreddits I hand pick
+3. useSelector to select subreddits state in Subreddits component
+4. Map through subreddits state to map subreddit state to Subreddit Components 
+
+Updating selectedSubreddit state
+
+1. Add an action creator in redditSlice that updates the selectedSubreddit to action.payload
+2. On clicking a subreddit component, dispatch the actio which updates selectedSubreddit
+3. useSelector to select selectedSubreddit in the Posts component
+4. Change the endpoint in useEffect to take selectedSubreddit as the part after /r/

@@ -28,16 +28,11 @@ function Posts() {
   //give component access to the reddit.posts slice of state
   const posts = useSelector(selectPosts);
 
-  posts.forEach((post) => {
-    console.log(post.created_utc)
-  })
-
   return (
     <div className="Posts">
       {posts.map((post, index) => {
-
-
-        const { id, name, title, thumbnail, url, ups, downs, created_utc} = post;
+        const { id, name, title, thumbnail, url, ups, downs, created_utc } =
+          post;
 
         //if the url for the post includes gallery, we won't show the url as preview image (more logic needed as I expand outside /r/pics)
         const showUrl = url.indexOf("gallery") === -1 ? true : false;
@@ -45,8 +40,34 @@ function Posts() {
         //find time since posts seconds
         //convert seconds into either days, weeks, months, years depending on number of seconds
         const postedAgo = (created_utc) => {
-          return Date.now() - created_utc
-        }
+
+          //note Date.now() is ms since 1/1/1970, and utc is seconds since. So convert UTC to ms
+          /*
+          1 day = 24 hours
+          1 week = 168 hours
+          1 month = 744 hours (assuming 31 day months to acocunt for longest possible)
+          1 year = 8760 hours
+          */
+
+          const secondsElapsed = Date.now() - created_utc * 1000;
+          const hoursRaw = secondsElapsed / 3600000;
+          const hoursElapsed = Math.floor(hoursRaw);
+          const daysElapsed = hoursElapsed / 24;
+          const weeksElapsed = hoursElapsed / 168;
+          const monthsElapsed = hoursElapsed / 744;
+          const yearsElapsed = hoursElapsed / 8760;
+          if (hoursElapsed < 24) {
+            return `${hoursElapsed} hours ago`;
+          } else if (hoursElapsed < 168) {
+            return `${daysElapsed} days ago`;
+          } else if (hoursElapsed < 744) {
+            return `${weeksElapsed} weeks ago`;
+          } else if (hoursElapsed < 8760) {
+            return `${monthsElapsed} months ago`;
+          } else {
+            return `${yearsElapsed} years ago`;
+          }
+        };
 
         return (
           <Post
