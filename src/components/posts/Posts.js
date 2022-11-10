@@ -9,14 +9,15 @@ function Posts() {
   let selectedSubreddit = useSelector(selectSelectedSubreddit);
   //define async function inside useEffect callback
   //then call the function inside useEffect
-  //update useEffect so that is runs again on update to searchedSubbreddit. Update endpoint based on searchSubreddit
+  //update useEffect so that is runs again on update to selectedSubreddit. Update endpoint based on selectedSubreddit
+  //use similar logic for getting posts that match search
   useEffect(() => {
     const getPosts = async () => {
       const endpoint = `https://www.reddit.com/r/${selectedSubreddit}.json`;
       const response = await fetch(endpoint);
       const raw = await response.json();
       const postsFull = raw.data.children;
-      console.log(postsFull);
+      //clear the posts so its an empty array to push new posts to on updates to selected subreddit
       dispatch(clearPosts())
       postsFull.forEach((post) => {
         dispatch(addPost(post.data));

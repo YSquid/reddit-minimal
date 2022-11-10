@@ -29,6 +29,8 @@ export const redditSlice = createSlice({
         });
       },
     },
+    //used to clear the posts to an empty state for when I choose a new subreddit and load posts from it into state
+    //maybe I can use this somehow in next page kinda s
     clearPosts: {
       reducer: (state) => {
         state.posts = []
