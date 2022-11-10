@@ -5,7 +5,7 @@ const initialState = {
   isLoading: false,
   errorLoading: false,
   searchTerm: "",
-  selectedSubreddit: "",
+  selectedSubreddit: "pics",
 };
 
 export const redditSlice = createSlice({
@@ -16,6 +16,7 @@ export const redditSlice = createSlice({
       reducer: (state, action) => {
         const { id, name, title, thumbnail, url, ups, downs, created_utc } =
           action.payload;
+        //how can I udate this so that I don't just push new state every time, but replace state on each dispatch
         state.posts.push({
           id: id,
           name: name,
@@ -28,6 +29,11 @@ export const redditSlice = createSlice({
         });
       },
     },
+    clearPosts: {
+      reducer: (state) => {
+        state.posts = []
+      }
+    },
     updateSelectedSubreddit: {
       reducer: (state, action) => {
         // const { selectedSubreddit } = action.payload;
@@ -37,7 +43,7 @@ export const redditSlice = createSlice({
   },
 });
 
-export const { addPost, updateSelectedSubreddit } = redditSlice.actions; //addPost action
+export const { addPost, clearPosts, updateSelectedSubreddit } = redditSlice.actions; //addPost action
 
 //selectors for each prop in redditSlice
 export const selectPosts = (state) => state.reddit.posts;
