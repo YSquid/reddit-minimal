@@ -1,17 +1,13 @@
 import React, { useEffect, useState, useCallback } from "react";
 import "./Posts.css";
 import Post from "../post/Post";
-import { useDispatch } from "react-redux";
-import { addPost } from "./redditSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addPost, selectPosts } from "./redditSlice";
 
 function Posts() {
-  //using a local state to store posts after retrival
-  const [posts, setPosts] = useState([]);
   const dispatch = useDispatch();
 
-  //setup local state to track what subreddit is being searched (searchedSubreddit)
-
-  //define async function inside useEffect callback, local state set inside async callback
+  //define async function inside useEffect callback
   //then call the function inside useEffect
   //update useEffect so that is runs again on update to searchedSubbreddit. Update endpoint based on searchSubreddit
   useEffect(() => {
@@ -19,22 +15,32 @@ function Posts() {
       const endpoint = "https://www.reddit.com/r/pics.json";
       const response = await fetch(endpoint);
       const raw = await response.json();
-      const posts = raw.data.children;
-      setPosts(posts);
-      // dispatch(addPost(posts[0].data));
-      posts.forEach((post) => {
-        dispatch(addPost(post.data))
-      })
+      const postsFull = raw.data.children;
+      console.log(postsFull)
+      postsFull.forEach((post) => {
+        dispatch(addPost(post.data));
+      });
     };
 
     getPosts();
   }, []);
-
+  const posts = useSelector(selectPosts);
+  console.log(posts);
   return (
     <div className="Posts">
-      <Post />
-      <Post />
-      <Post />
+      {posts.map((post, index) => {
+        const {id, name, title, thumbnail, url} = post
+        return (
+        <Post 
+        key={index}
+        id={id}
+        name={name}
+        title={title}
+        thumbnail={thumbnail}
+        url={url}
+         />
+        );
+      })}
     </div>
   );
 }
