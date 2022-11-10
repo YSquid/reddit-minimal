@@ -168,7 +168,7 @@ const state = {
   subreddits: {
     subreddits: [
       {
-        display_name: '',
+        subreddit: '',
         title: '',
         header_img: '',
         icon_size: [0,0],

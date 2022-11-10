@@ -1,7 +1,7 @@
 Rendering the subs
 
 1. Create a subreddits slice
-2. Give it an initial state with 5 subreddits I hand pick
+2. Give it an initial state with 5 subreddits I hand pick - hard code the names and image for now **how do I get JSON of subreddit info**
 3. useSelector to select subreddits state in Subreddits component
 4. Map through subreddits state to map subreddit state to Subreddit Components 
 

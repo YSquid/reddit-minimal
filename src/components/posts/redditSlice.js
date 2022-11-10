@@ -40,5 +40,5 @@ export const selectSearchTerm = (state) => state.reddit.searchTerm;
 export const selectSelectedSubreddit = (state) =>
   state.reddit.selectedSubreddit;
 
-//export reducer
-export default redditSlice.reducer;
+
+export default redditSlice.reducer; //default export is the reducer for the slice
