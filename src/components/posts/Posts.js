@@ -16,7 +16,7 @@ function Posts() {
       const response = await fetch(endpoint);
       const raw = await response.json();
       const postsFull = raw.data.children;
-      console.log(postsFull)
+      // console.log(postsFull);
       postsFull.forEach((post) => {
         dispatch(addPost(post.data));
       });
@@ -25,20 +25,24 @@ function Posts() {
     getPosts();
   }, []);
   const posts = useSelector(selectPosts);
-  console.log(posts);
+  //use this to remove the object freeze so I can mutate object properties
+  
+
   return (
     <div className="Posts">
       {posts.map((post, index) => {
-        const {id, name, title, thumbnail, url} = post
+        const { id, name, title, thumbnail, url } = post;
+        const showUrl = url.indexOf('gallery') === -1 ? true : false
         return (
-        <Post 
-        key={index}
-        id={id}
-        name={name}
-        title={title}
-        thumbnail={thumbnail}
-        url={url}
-         />
+          <Post
+            key={index}
+            id={id}
+            name={name}
+            title={title}
+            thumbnail={thumbnail}
+            url={url}
+            showUrl={showUrl}
+          />
         );
       })}
     </div>

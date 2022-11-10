@@ -4,7 +4,7 @@ import Comments from "../comments/Comments";
 import { BiUpvote, BiDownvote, BiCommentDetail } from "react-icons/bi";
 // import previewImage from "../../assets/previewPH.png";
 
-function Post({id, name, title, thumbnail, url}) {
+function Post({id, name, title, thumbnail, url, showUrl}) {
   const [showComments, setShowComments] = useState(false);
 
   const toggleComments = () => {
@@ -23,7 +23,9 @@ function Post({id, name, title, thumbnail, url}) {
           <a href={url} target='_blank'><p>{title}</p></a>
         </div>
         <div className="postPreview">
-          <a href={url} target='_blank'><img src={thumbnail} /></a>
+          <a href={url} target='_blank'>
+          {showUrl && <img src={url} />}
+          </a>
         </div>
         <div className="postFooter">
           <p>Author</p>
