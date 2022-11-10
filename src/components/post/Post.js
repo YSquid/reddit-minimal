@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import "./Post.css";
 import Comments from "../comments/Comments";
 import { BiUpvote, BiDownvote, BiCommentDetail } from "react-icons/bi";
-// import previewImage from "../../assets/previewPH.png";
 
-function Post({id, name, title, thumbnail, url, showUrl}) {
+function Post({id, name, title, thumbnail, url, showUrl, ups, downs}) {
   const [showComments, setShowComments] = useState(false);
 
   const toggleComments = () => {
@@ -15,7 +14,7 @@ function Post({id, name, title, thumbnail, url, showUrl}) {
     <div className="Post">
       <div className="Votes">
         <BiUpvote />
-        <p>20</p>
+        <p>{ups - downs}</p>
         <BiDownvote />
       </div>
       <div className="postBody">

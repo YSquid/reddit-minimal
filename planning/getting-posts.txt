@@ -10,8 +10,6 @@ Each object has "kind", and data - the data about each post.
 
 Next steps to flesh it out:
 
-1) How do I access a higher quality preview image? Links in the preview prop can't be accessed -I can access the links, but need to figure out how to replace &amp; with just & for final link
-2) Add votes count, time added, comments to state
+1) How do I access a higher quality preview image? use the url as the preview image - if gallery show nothing. DONE
+2) Add votes count, time added, to state
 3) Convert time in UNIX to 'x hours, days, months' etc ago. 
-4) Map the comments to elements in my comments component
-5) 
