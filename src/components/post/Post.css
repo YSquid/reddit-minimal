@@ -30,6 +30,14 @@
 }
 .postPreview > img{
     width: 100%;
+    
+}
+
+.postPreview > a > img {
+    background-color: black;
+    width: 25%;
+    height: 100%;
+
 }
 
 .postFooter {

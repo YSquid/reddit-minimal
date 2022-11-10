@@ -23,7 +23,7 @@ function Post({id, name, title, thumbnail, url}) {
           <a href={url} target='_blank'><p>{title}</p></a>
         </div>
         <div className="postPreview">
-          <img src={thumbnail} />
+          <a href={url} target='_blank'><img src={thumbnail} /></a>
         </div>
         <div className="postFooter">
           <p>Author</p>

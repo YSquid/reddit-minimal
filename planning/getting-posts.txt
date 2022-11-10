@@ -1,9 +1,17 @@
 1. Create a function that fetches a posts array from the reddit API using fetch - how do I only grab X amount of posts? DONE
 2. Call the fetching posts function with useEffect on load, save to Posts local state. DONE
-3. Create a redditSlice - one of its properties is posts.
-4. Have an addPost action which takes a post payload (one of the items in my post array) and creates the post in state (see topicsSlice example for flashcards)
-5. After I fetch the posts, dispatch the addPost action for each post in the array
+3. Create a redditSlice - one of its properties is posts. DONE
+4. Have an addPost action which takes a post payload (one of the items in my post array) and creates the post in state (see topicsSlice example for flashcards) DONE
+5. After I fetch the posts, dispatch the addPost action for each post in the array DONE
 
 From what I can tell I can make a request to something like reddit.com/r/pics.json and get the raw JSON for that page
 The page will have a "Listing" whose "data" property then holds the posts. The data prop has a few different things, but the one I care about it "children" which reutrns an array of objects. 
 Each object has "kind", and data - the data about each post. 
+
+Next steps to flesh it out:
+
+1) How do I access a higher quality preview image? Links in the preview prop can't be accessed -I can access the links, but need to figure out how to replace &amp; with just & for final link
+2) Add votes count, time added, comments to state
+3) Convert time in UNIX to 'x hours, days, months' etc ago. 
+4) Map the comments to elements in my comments component
+5) 
