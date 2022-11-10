@@ -1,17 +1,23 @@
-import React from 'react'
-import './Subreddit.css'
-import{FaRedditSquare} from 'react-icons/fa'
+import React from "react";
+import "./Subreddit.css";
+import { FaRedditSquare } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import {updateSelectedSubreddit} from '../posts/redditSlice'
 
-function Subreddit({title, icon}) {
-    const handleSubredditClick = (e) => {
-        e.preventDefault()
-        alert('You clicked a subreddit')
-    }
+function Subreddit({ subredditTitle, icon }) {
+  const dispatch = useDispatch();
+  const handleSubredditClick = (e) => {
+    e.preventDefault();
+    dispatch(updateSelectedSubreddit(subredditTitle))
+  };
   return (
-    <div className='subredditButton'>
-        <button onClick={handleSubredditClick}><img src={icon}/><h2>{title}</h2></button>
+    <div className="subredditButton">
+      <button type='submit' onClick={handleSubredditClick}>
+        <img src={icon} />
+        <h2>{subredditTitle}</h2>
+      </button>
     </div>
-  )
+  );
 }
 
-export default Subreddit
+export default Subreddit;

@@ -17,7 +17,7 @@ function Subreddits() {
           return (
             <Subreddit
             key={index}
-            title={subredditTitle}
+            subredditTitle={subredditTitle}
             icon={icon} />
           )
         })}

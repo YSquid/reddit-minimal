@@ -10,6 +10,6 @@
 **Updating selectedSubreddit state**
 
 1. Add and export an action creator in redditSlice that updates the selectedSubreddit to action.payload DONE
-2. On clicking a subreddit component, dispatch the actio which updates selectedSubreddit
+2. On clicking a subreddit component, dispatch the action which updates selectedSubreddit
 3. useSelector to select selectedSubreddit in the Posts component
 4. Change the endpoint in useEffect to take selectedSubreddit as the part after /r/

@@ -14,27 +14,27 @@ export const redditSlice = createSlice({
   reducers: {
     addPost: {
       reducer: (state, action) => {
-        const { id, name, title, thumbnail, url, ups, downs, created_utc } = action.payload;
-        state.posts.push({ 
-            id: id,
-            name: name,
-            title,
-            thumbnail: thumbnail,
-            url: url,
-            ups: ups,
-            downs: downs,
-            created_utc: created_utc
+        const { id, name, title, thumbnail, url, ups, downs, created_utc } =
+          action.payload;
+        state.posts.push({
+          id: id,
+          name: name,
+          title,
+          thumbnail: thumbnail,
+          url: url,
+          ups: ups,
+          downs: downs,
+          created_utc: created_utc,
         });
       },
     },
+    updateSelectedSubreddit: {
+      reducer: (state, action) => {
+        // const { selectedSubreddit } = action.payload;
+        state.selectedSubreddit = action.payload;
+      },
+    },
   },
-
-  updateSelectedSubreddit: {
-    reducer: (state, action) => {
-      const {selectedSubreddit} = action.payload
-      state.selectedSubreddit = selectedSubreddit
-    }
-  }
 });
 
 export const { addPost, updateSelectedSubreddit } = redditSlice.actions; //addPost action
@@ -46,6 +46,5 @@ export const selectErrorLoading = (state) => state.reddit.errorLoading;
 export const selectSearchTerm = (state) => state.reddit.searchTerm;
 export const selectSelectedSubreddit = (state) =>
   state.reddit.selectedSubreddit;
-
 
 export default redditSlice.reducer; //default export is the reducer for the slice
