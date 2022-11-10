@@ -24,14 +24,30 @@ function Posts() {
 
     getPosts();
   }, []);
+
+  //give component access to the reddit.posts slice of state
   const posts = useSelector(selectPosts);
-  
+
+  posts.forEach((post) => {
+    console.log(post.created_utc)
+  })
 
   return (
     <div className="Posts">
       {posts.map((post, index) => {
-        const { id, name, title, thumbnail, url, ups, downs } = post;
-        const showUrl = url.indexOf('gallery') === -1 ? true : false
+
+
+        const { id, name, title, thumbnail, url, ups, downs, created_utc} = post;
+
+        //if the url for the post includes gallery, we won't show the url as preview image (more logic needed as I expand outside /r/pics)
+        const showUrl = url.indexOf("gallery") === -1 ? true : false;
+
+        //find time since posts seconds
+        //convert seconds into either days, weeks, months, years depending on number of seconds
+        const postedAgo = (created_utc) => {
+          return Date.now() - created_utc
+        }
+
         return (
           <Post
             key={index}
@@ -43,6 +59,8 @@ function Posts() {
             showUrl={showUrl}
             ups={ups}
             downs={downs}
+            postedAgo={postedAgo}
+            created_utc={created_utc}
           />
         );
       })}

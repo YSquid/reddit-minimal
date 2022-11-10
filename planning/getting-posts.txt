@@ -11,5 +11,5 @@ Each object has "kind", and data - the data about each post.
 Next steps to flesh it out:
 
 1) How do I access a higher quality preview image? use the url as the preview image - if gallery show nothing. DONE
-2) Add votes count, time added, to state
+2) Add votes count, time added, to state DONE
 3) Convert time in UNIX to 'x hours, days, months' etc ago. 
