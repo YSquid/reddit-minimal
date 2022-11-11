@@ -13,3 +13,7 @@
 2. On clicking a subreddit component, dispatch the action which updates selectedSubreddit DONE
 3. useSelector to select selectedSubreddit in the Posts component DONE
 4. Change the endpoint in useEffect to take selectedSubreddit as the part after /r/ DONE
+
+*More subreddits*
+Increasing limits - ?limit=100
+https://www.reddit.com/subreddits.json

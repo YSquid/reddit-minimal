@@ -2,3 +2,5 @@
 
 1. Have a piece of state called filtered posts, set that piece of state to match the filtered posts
 2. Conditinally set my local posts variable in posts - if searchTerm is blank, it equals selectPosts, if its not blank it equals selectFilteredPosts
+
+*next steps add a broader search that filters over the whole reddit*

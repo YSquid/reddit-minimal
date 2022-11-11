@@ -19,3 +19,5 @@ Updating preview rules:
 
 1. Change the conditional so that showUrl is true is post.url contains either .jpg or .png DONE
 2. For ones with no showUrl, display a placeholder reddit icon DONE
+
+Add in the subreddit before the author name 

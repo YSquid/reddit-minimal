@@ -28,6 +28,7 @@ function Posts() {
       const response = await fetch(endpoint);
       const raw = await response.json();
       const postsFull = raw.data.children;
+      console.log(postsFull)
       //clear the posts so its an empty array to push new posts to on updates to selected subreddit
       dispatch(clearPosts());
       postsFull.forEach((post) => {
