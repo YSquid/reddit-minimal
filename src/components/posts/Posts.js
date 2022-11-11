@@ -17,6 +17,7 @@ function Posts() {
   const searchTerm = useSelector(selectSearchTerm);
   const filteredPosts = useSelector(selectFilteredPosts);
   const allPosts = useSelector(selectPosts);
+
   //define async function inside useEffect callback
   //then call the function inside useEffect
   //update useEffect so that is runs again on update to selectedSubreddit. Update endpoint based on selectedSubreddit
@@ -37,7 +38,9 @@ function Posts() {
     getPosts();
   }, [selectedSubreddit, dispatch]);
 
-  //give component access to the reddit.posts slice of state
+  //choose which slice of state I want to render
+  //If searchTerm is anything besides '' (i.e. truthy), render the filteredPosts. 
+  //If it is '' (i.e. falsy) render allPosts
   const posts = searchTerm ? filteredPosts : allPosts
 
   console.log(posts)
@@ -66,10 +69,10 @@ function Posts() {
           const secondsElapsed = Date.now() - created_utc * 1000;
           const hoursRaw = secondsElapsed / 3600000;
           const hoursElapsed = Math.floor(hoursRaw);
-          const daysElapsed = hoursElapsed / 24;
-          const weeksElapsed = hoursElapsed / 168;
-          const monthsElapsed = hoursElapsed / 744;
-          const yearsElapsed = hoursElapsed / 8760;
+          const daysElapsed = Math.floor(hoursElapsed / 24);
+          const weeksElapsed = Math.floor(hoursElapsed / 168);
+          const monthsElapsed = Math.floor(hoursElapsed / 744);
+          const yearsElapsed = Math.floor(hoursElapsed / 8760);
           if (hoursElapsed < 24) {
             return `${hoursElapsed} hours ago`;
           } else if (hoursElapsed < 168) {

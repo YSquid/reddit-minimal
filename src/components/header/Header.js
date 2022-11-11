@@ -9,24 +9,28 @@ function Header() {
   const [localSearchTerm, setLocalSearchTerm] = useState("");
   const dispatch = useDispatch();
 
+  //stores my search term locally
   const handleSearchChange = (e) => {
     e.preventDefault();
     setLocalSearchTerm(e.target.value);
   };
 
-  const handleClear = (e) => {
-    if (e.target.value === '') {
-      dispatch(setSearchTerm(e.target.value))
-    }
-  }
-
-
-  //placeholder function for the submit action (in reality will dispatch action to filter the posts slice)
+  //on submitting search, dispatch filerPosts which returns posts who's title include the searchTerm
+  //These filtered posts have their own peice of state in the redditSlice
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     dispatch(filterPosts(localSearchTerm))
     dispatch(setSearchTerm(localSearchTerm))
   };
+  
+  //handleClear function that runs on 'onInput'
+  //only does something if the event target value is empty string (i.e. the input is cleared)
+  //in that case, it dispatches the action to set searchTerm in redditSlice to ''
+  const handleClear = (e) => {
+    if (e.target.value === '') {
+      dispatch(setSearchTerm(e.target.value))
+    }
+  }
 
 
   return (
