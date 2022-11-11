@@ -1,8 +1,13 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import "./Posts.css";
 import Post from "../post/Post";
 import { useDispatch, useSelector } from "react-redux";
-import { addPost, selectPosts, clearPosts, selectSelectedSubreddit } from "./redditSlice";
+import {
+  addPost,
+  selectPosts,
+  clearPosts,
+  selectSelectedSubreddit,
+} from "./redditSlice";
 
 function Posts() {
   const dispatch = useDispatch();
@@ -18,14 +23,14 @@ function Posts() {
       const raw = await response.json();
       const postsFull = raw.data.children;
       //clear the posts so its an empty array to push new posts to on updates to selected subreddit
-      dispatch(clearPosts())
+      dispatch(clearPosts());
       postsFull.forEach((post) => {
         dispatch(addPost(post.data));
       });
     };
 
     getPosts();
-  }, [selectedSubreddit]);
+  }, [selectedSubreddit, dispatch]);
 
   //give component access to the reddit.posts slice of state
   const posts = useSelector(selectPosts);
@@ -37,12 +42,12 @@ function Posts() {
           post;
 
         //if the url for the post includes gallery, we won't show the url as preview image (more logic needed as I expand outside /r/pics)
-        const showUrl = url.indexOf("gallery") === -1 ? true : false;
+        const showUrl = url.indexOf('.png') !== -1 ? true : url.indexOf('.jpg') !== -1 ? true : false;
 
+       
         //find time since posts seconds
         //convert seconds into either days, weeks, months, years depending on number of seconds
         const postedAgo = (created_utc) => {
-
           //note Date.now() is ms since 1/1/1970, and utc is seconds since. So convert UTC to ms
           /*
           1 day = 24 hours

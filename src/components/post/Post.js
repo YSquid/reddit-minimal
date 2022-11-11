@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Post.css";
 import Comments from "../comments/Comments";
 import { BiUpvote, BiDownvote, BiCommentDetail } from "react-icons/bi";
+import {FaRedditSquare} from 'react-icons/fa'
 
 function Post({
   id,
@@ -30,14 +31,14 @@ function Post({
       </div>
       <div className="postBody">
         <div className="postTitle">
-          <a href={url} target="_blank">
+          <a href={url} target="_blank" rel="noreferrer">
             <p>{title}</p>
           </a>
         </div>
         <div className="postPreview">
-          <a href={url} target="_blank">
+          <a href={url} target="_blank" rel="noreferrer">
             {/*I only want to show an image if showUrl is true. showUrl is set in the Posts component*/}
-            {showUrl && <img src={url} />}
+            {showUrl ? <img src={url} alt={`${title}`} className='previewUrl' /> : <FaRedditSquare className="previewPlaceholder"/>}
           </a>
         </div>
         <div className="postFooter">
