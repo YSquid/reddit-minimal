@@ -1,3 +1,2 @@
-1. Create a matching posts piece of local state in posts
-2. By default, all the posts loaded get put into this state
-3. When a search term is added
+1. Create an action in redditSlice called 'filterPosts' which filters the posts array to match the searchTerm and then sets psots equal to that array
+2. Dispatch filterPosts from the Header component onSubmit of searchbar

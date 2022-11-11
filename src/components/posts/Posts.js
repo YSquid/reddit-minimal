@@ -11,7 +11,7 @@ import {
 
 function Posts() {
   const dispatch = useDispatch();
-  let selectedSubreddit = useSelector(selectSelectedSubreddit);
+  const selectedSubreddit = useSelector(selectSelectedSubreddit);
   //define async function inside useEffect callback
   //then call the function inside useEffect
   //update useEffect so that is runs again on update to selectedSubreddit. Update endpoint based on selectedSubreddit
