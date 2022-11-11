@@ -2,13 +2,14 @@ import React from "react";
 import "./Subreddit.css";
 import { FaRedditSquare } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import {updateSelectedSubreddit} from '../posts/redditSlice'
+import {updateSelectedSubreddit, setSearchTerm} from '../posts/redditSlice'
 
 function Subreddit({ subredditTitle, icon }) {
   const dispatch = useDispatch();
   const handleSubredditClick = (e) => {
     e.preventDefault();
     dispatch(updateSelectedSubreddit(subredditTitle))
+    dispatch(setSearchTerm(''))
   };
   return (
     <div className="subredditButton">
