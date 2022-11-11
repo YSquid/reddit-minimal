@@ -14,12 +14,20 @@ function Header() {
     setLocalSearchTerm(e.target.value);
   };
 
+  const handleClear = (e) => {
+    if (e.target.value === '') {
+      dispatch(setSearchTerm(e.target.value))
+    }
+  }
+
+
   //placeholder function for the submit action (in reality will dispatch action to filter the posts slice)
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     dispatch(filterPosts(localSearchTerm))
     dispatch(setSearchTerm(localSearchTerm))
   };
+
 
   return (
     <div className="Header">
@@ -33,6 +41,7 @@ function Header() {
           type="search"
           placeholder="search for something"
           onChange={handleSearchChange}
+          onInput={handleClear}
           value={localSearchTerm}
         />
         <button id="searchIcon">
