@@ -20,7 +20,7 @@ export const redditSlice = createSlice({
         state.posts.push({
           id: id,
           name: name,
-          title,
+          title: title,
           thumbnail: thumbnail,
           url: url,
           ups: ups,
@@ -36,16 +36,21 @@ export const redditSlice = createSlice({
         state.posts = []
       }
     },
+    filterPosts: {
+      reducer: (state, action) => {
+        const filteredPosts = state.posts.filter(post => post.title.includes(action.payload))
+        state.posts = filteredPosts
+      }
+    },
     updateSelectedSubreddit: {
       reducer: (state, action) => {
-        // const { selectedSubreddit } = action.payload;
         state.selectedSubreddit = action.payload;
       },
     },
   },
 });
 
-export const { addPost, clearPosts, updateSelectedSubreddit } = redditSlice.actions; //addPost action
+export const { addPost, clearPosts, filterPosts, updateSelectedSubreddit } = redditSlice.actions; //addPost action
 
 //selectors for each prop in redditSlice
 export const selectPosts = (state) => state.reddit.posts;
