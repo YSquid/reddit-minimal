@@ -47,8 +47,7 @@ function Posts() {
        
         //find time since posts seconds
         //convert seconds into either days, weeks, months, years depending on number of seconds
-        const postedAgo = (created_utc) => {
-          //note Date.now() is ms since 1/1/1970, and utc is seconds since. So convert UTC to ms
+        //note Date.now() is ms since 1/1/1970, and utc is seconds since. So convert UTC to ms
           /*
           1 day = 24 hours
           1 week = 168 hours
@@ -56,6 +55,7 @@ function Posts() {
           1 year = 8760 hours
           */
 
+        const postedAgo = (created_utc) => {
           const secondsElapsed = Date.now() - created_utc * 1000;
           const hoursRaw = secondsElapsed / 3600000;
           const hoursElapsed = Math.floor(hoursRaw);
