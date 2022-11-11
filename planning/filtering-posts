@@ -1,7 +1,4 @@
-1. Create an action in redditSlice called 'filterPosts' which filters the posts array to match the searchTerm and then sets psots equal to that array
-2. Dispatch filterPosts from the Header component onSubmit of searchbar
-
-*adapation*
+**Approach**
 
 1. Have a piece of state called filtered posts, set that piece of state to match the filtered posts
 2. Conditinally set my local posts variable in posts - if searchTerm is blank, it equals selectPosts, if its not blank it equals selectFilteredPosts
