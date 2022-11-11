@@ -17,6 +17,29 @@ function Post({
   created_utc
 }) {
   const [showComments, setShowComments] = useState(false);
+  const [votes, setVotes] = useState(ups-downs)
+  const [upActive, setUpActive] = useState(false)
+  const [downActive, setDownActive] = useState(false)
+  
+  const handleUp = () => {
+    if (upActive === false) {
+      setUpActive(true)
+      setVotes(votes + 1)
+    } else {
+      setUpActive(false)
+      setVotes(votes - 1)
+    }
+  }
+
+  const handleDown = () => {
+    if (downActive === false) {
+      setDownActive(true)
+      setVotes(votes - 1)
+    } else {
+      setDownActive(false)
+      setVotes(votes + 1)
+    }
+  }
 
   const toggleComments = () => {
     setShowComments(!showComments);
@@ -25,9 +48,9 @@ function Post({
   return (
     <div className="Post">
       <div className="Votes">
-        <BiUpvote />
-        <p>{ups - downs}</p>
-        <BiDownvote />
+        <button onClick={handleUp}><BiUpvote /></button>
+        <p>{votes}</p>
+        <button onClick={handleDown}><BiDownvote /></button>
       </div>
       <div className="postBody">
         <div className="postTitle">

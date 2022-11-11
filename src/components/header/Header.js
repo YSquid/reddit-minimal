@@ -1,37 +1,54 @@
 import React, { useState } from "react";
 import "./Header.css";
 import { FcReddit, FcSearch } from "react-icons/fc";
+import { setSearchTerm, filterPosts } from "../posts/redditSlice";
+import { useDispatch } from "react-redux";
 
 function Header() {
   //local state stores the search term - will be dispatched to store on submit
-  const [searchTerm, setSearchTerm] = useState("");
+  const [localSearchTerm, setLocalSearchTerm] = useState("");
+  const dispatch = useDispatch();
 
+  //stores my search term locally
   const handleSearchChange = (e) => {
     e.preventDefault();
-    setSearchTerm(e.target.value);
+    setLocalSearchTerm(e.target.value);
   };
 
-  //placeholder function for the submit action (in reality will dispatch action to filter the posts slice)
+  //on submitting search, dispatch filerPosts which returns posts who's title include the searchTerm
+  //These filtered posts have their own peice of state in the redditSlice
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    alert(`You searched for ${searchTerm}`);
+    dispatch(filterPosts(localSearchTerm))
+    dispatch(setSearchTerm(localSearchTerm))
   };
+  
+  //handleClear function that runs on 'onInput'
+  //only does something if the event target value is empty string (i.e. the input is cleared)
+  //in that case, it dispatches the action to set searchTerm in redditSlice to ''
+  const handleClear = (e) => {
+    if (e.target.value === '') {
+      dispatch(setSearchTerm(e.target.value))
+    }
+  }
+
 
   return (
     <div className="Header">
-      <h1 id='mainLogo'>
+      <h1 id="mainLogo">
         <FcReddit />
         RedditMinimal
       </h1>
       <form id="searchForm" role="search" onSubmit={handleSearchSubmit}>
         <input
-          id='searchBar'
+          id="searchBar"
           type="search"
           placeholder="search for something"
           onChange={handleSearchChange}
-          value={searchTerm}
+          onInput={handleClear}
+          value={localSearchTerm}
         />
-        <button id='searchIcon'>
+        <button id="searchIcon">
           <FcSearch />
         </button>
       </form>

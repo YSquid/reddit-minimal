@@ -1,3 +1,4 @@
-1. Create a matching posts piece of local state in posts
-2. By default, all the posts loaded get put into this state
-3. When a search term is added
+**Approach**
+
+1. Have a piece of state called filtered posts, set that piece of state to match the filtered posts
+2. Conditinally set my local posts variable in posts - if searchTerm is blank, it equals selectPosts, if its not blank it equals selectFilteredPosts
