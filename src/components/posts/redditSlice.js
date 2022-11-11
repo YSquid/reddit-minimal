@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   posts: [],
+  filteredPosts: [],
   isLoading: false,
   errorLoading: false,
   searchTerm: "",
@@ -33,14 +34,21 @@ export const redditSlice = createSlice({
     //maybe I can use this somehow in next page kinda s
     clearPosts: {
       reducer: (state) => {
-        state.posts = []
-      }
+        state.posts = [];
+      },
     },
     filterPosts: {
       reducer: (state, action) => {
-        const filteredPosts = state.posts.filter(post => post.title.includes(action.payload))
-        state.posts = filteredPosts
+        const filteredPosts = state.posts.filter((post) =>{
+          return post.title.includes(action.payload)
+        })
+        state.filteredPosts = filteredPosts
       }
+    },
+    setSearchTerm: {
+      reducer: (state, action) => {
+        state.searchTerm = action.payload;
+      },
     },
     updateSelectedSubreddit: {
       reducer: (state, action) => {
@@ -50,10 +58,12 @@ export const redditSlice = createSlice({
   },
 });
 
-export const { addPost, clearPosts, filterPosts, updateSelectedSubreddit } = redditSlice.actions; //addPost action
+export const { addPost, clearPosts, setSearchTerm, filterPosts, updateSelectedSubreddit } =
+  redditSlice.actions; //addPost action
 
 //selectors for each prop in redditSlice
 export const selectPosts = (state) => state.reddit.posts;
+export const selectFilteredPosts = (state) => state.reddit.filteredPosts
 export const selectIsLoading = (state) => state.reddit.isLoading;
 export const selectErrorLoading = (state) => state.reddit.errorLoading;
 export const selectSearchTerm = (state) => state.reddit.searchTerm;

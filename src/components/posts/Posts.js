@@ -7,11 +7,16 @@ import {
   selectPosts,
   clearPosts,
   selectSelectedSubreddit,
+  selectSearchTerm,
+  selectFilteredPosts
 } from "./redditSlice";
 
 function Posts() {
   const dispatch = useDispatch();
   const selectedSubreddit = useSelector(selectSelectedSubreddit);
+  const searchTerm = useSelector(selectSearchTerm);
+  const filteredPosts = useSelector(selectFilteredPosts);
+  const allPosts = useSelector(selectPosts);
   //define async function inside useEffect callback
   //then call the function inside useEffect
   //update useEffect so that is runs again on update to selectedSubreddit. Update endpoint based on selectedSubreddit
@@ -33,7 +38,9 @@ function Posts() {
   }, [selectedSubreddit, dispatch]);
 
   //give component access to the reddit.posts slice of state
-  const posts = useSelector(selectPosts);
+  const posts = searchTerm ? filteredPosts : allPosts
+
+  console.log(posts)
 
   return (
     <div className="Posts">
