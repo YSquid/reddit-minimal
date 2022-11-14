@@ -3,7 +3,8 @@
 3. Pass permalink to each rendered post as prop - [x]
 4. On clicking the showComments button on a Post, fire a get request to reddit.com/{permalink}.json?limit=10 - [x]
 5. Store the retrieved comments in local state - [x]
-6. Map over the comments prop to generate a div for each comment with the comment text, and postedAgo - do this inside the Comments component
+6. Map over the comments prop to generate a div for each comment with the comment text, and postedAgo - do this inside the Comments component -[x]
+7. Make a new component - Comment to render each comment mapped in Comments - [x]
 
 Bonus - modularize postedAgo and pass it to the Post and Comment component from module
 
