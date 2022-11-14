@@ -28,7 +28,7 @@ function Posts() {
       const response = await fetch(endpoint);
       const raw = await response.json();
       const postsFull = raw.data.children;
-      // console.log(postsFull)
+      console.log(postsFull)
       //clear the posts so its an empty array to push new posts to on updates to selected subreddit
       dispatch(clearPosts());
       postsFull.forEach((post) => {
@@ -44,12 +44,12 @@ function Posts() {
   //If it is '' (i.e. falsy) render allPosts
   const posts = searchTerm ? filteredPosts : allPosts
 
-  // console.log(posts)
+  console.log(posts)
 
   return (
     <div className="Posts">
       {posts.map((post, index) => {
-        const { id, name, title, thumbnail, url, ups, downs, created_utc, permalink } =
+        const { id, name, title, thumbnail, author, url, ups, downs, created_utc, permalink } =
           post;
 
         //if the url for the post includes gallery, we won't show the url as preview image (more logic needed as I expand outside /r/pics)
@@ -93,6 +93,7 @@ function Posts() {
             id={id}
             name={name}
             title={title}
+            author={author}
             thumbnail={thumbnail}
             url={url}
             showUrl={showUrl}

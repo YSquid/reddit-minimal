@@ -15,12 +15,13 @@ export const redditSlice = createSlice({
   reducers: {
     addPost: {
       reducer: (state, action) => {
-        const { id, name, title, thumbnail, url, ups, downs, created_utc, permalink } =
+        const { id, name, title, thumbnail, url, ups, downs, created_utc, permalink, author } =
           action.payload;
         state.posts.push({
           id: id,
           name: name,
           title: title,
+          author,
           thumbnail: thumbnail,
           url: url,
           permalink: permalink,
