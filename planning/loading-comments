@@ -1,4 +1,4 @@
-1. Add the 'permalink' prop to the posts addPost action
+1. Add the 'permalink' prop to the posts addPost action - [x]
 2. Add an empty comments array to the addPost action
 3. On clicking the showComments button on a Post, fire a get request to reddit.com/{permalink}.json?limit=10
 4. Update the appropraite entry in the posts array with comments = response. Use the key prop to access i.e. the first post is keyed with 0, so access posts[0].comments = response

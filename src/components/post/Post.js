@@ -14,13 +14,15 @@ function Post({
   ups,
   downs,
   postedAgo,
-  created_utc
+  created_utc,
+  permalink
 }) {
   const [showComments, setShowComments] = useState(false);
   const [votes, setVotes] = useState(ups-downs)
   const [upActive, setUpActive] = useState(false)
   const [downActive, setDownActive] = useState(false)
   
+  //handle upvote (local state)
   const handleUp = () => {
     if (upActive === false) {
       setUpActive(true)
@@ -31,6 +33,7 @@ function Post({
     }
   }
 
+  //handle downvote (local state)
   const handleDown = () => {
     if (downActive === false) {
       setDownActive(true)
@@ -41,9 +44,20 @@ function Post({
     }
   }
 
+  //toggle showing comments
   const toggleComments = () => {
     setShowComments(!showComments);
+    getComments();
   };
+  
+  //function for fetching comments based on permalink prop
+  const getComments = async () => {
+    const endpoint = `https://www.reddit.com/r/pics/comments/yupiyy/brisbane_australia.json?limit=5`
+    const response = await fetch(endpoint,{ credentials: 'omit'})
+    console.log(response)
+    const raw = await response.json()
+    console.log(raw)
+  }
 
   return (
     <div className="Post">

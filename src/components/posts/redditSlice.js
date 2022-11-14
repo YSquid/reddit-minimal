@@ -15,18 +15,19 @@ export const redditSlice = createSlice({
   reducers: {
     addPost: {
       reducer: (state, action) => {
-        const { id, name, title, thumbnail, url, ups, downs, created_utc } =
+        const { id, name, title, thumbnail, url, ups, downs, created_utc, permalink } =
           action.payload;
-        //how can I udate this so that I don't just push new state every time, but replace state on each dispatch
         state.posts.push({
           id: id,
           name: name,
           title: title,
           thumbnail: thumbnail,
           url: url,
+          permalink: permalink,
           ups: ups,
           downs: downs,
           created_utc: created_utc,
+          comments: []
         });
       },
     },
