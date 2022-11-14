@@ -1,9 +1,8 @@
-import React from 'react'
-import './Comments.css'
-import Comment from '../comment/Comment'
+import React from "react";
+import "./Comments.css";
+import Comment from "../comment/Comment";
 
-function Comments({comments}) {
-
+function Comments({ comments }) {
   const postedAgo = (created_utc) => {
     const secondsElapsed = Date.now() - created_utc * 1000;
     const hoursRaw = secondsElapsed / 3600000;
@@ -25,17 +24,22 @@ function Comments({comments}) {
     }
   };
   return (
-    <div className='Comments'>
-    {comments.map((comment, index) => {
-      return <Comment 
-      key={index}
-      author={comment.data.author}
-      body={comment.data.body}
-      created_utc={comment.data.created_utc}
-      postedAgo={postedAgo} />
-    })}
+    <div className="Comments">
+      {comments.map((comment, index) => {
+        if (comment.kind === "t1") {
+          return (
+            <Comment
+              key={index}
+              author={comment.data.author}
+              body={comment.data.body}
+              created_utc={comment.data.created_utc}
+              postedAgo={postedAgo}
+            />
+          );
+        }
+      })}
     </div>
-  )
+  );
 }
 
-export default Comments
+export default Comments;
