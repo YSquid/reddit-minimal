@@ -9,6 +9,7 @@
 #mainLogo {
   padding: 0.25rem 0;
   margin-right: 1rem;
+  display: flex;
 }
 
 #searchForm {
