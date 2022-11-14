@@ -31,6 +31,7 @@
     padding: 0.15rem;
 }
 
+/*Post Body and Footer Styles*/
 .postBody {
     grid-area: body;
     padding: 1rem;
@@ -63,7 +64,9 @@
     display: flex;
     font-size: 1rem;
     justify-content: space-between;
-    padding: .75rem 1.25rem;
+    padding: 0.5rem 0 0 1.25rem;
+    border-top: 2px solid rgb(243,243,243);
+    margin-top: 0.5rem
 }
 
 .commentsToggle {
