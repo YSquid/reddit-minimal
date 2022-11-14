@@ -1,5 +1,5 @@
 .Header {
-    background-color: lightgrey;
+    background-color: white;
     grid-area: header;
     height: 3rem;
     display: flex;
@@ -22,7 +22,8 @@ padding: 0.25rem 0;
     width: 100%;
     border-radius: 0.25rem;
     padding: 0.5rem;
-    margin-right: 0.5rem
+    margin-right: 0.5rem;
+    background-color: rgb(243, 243, 243)
 }
 
 #searchIcon {

@@ -1,5 +1,5 @@
 .Subreddits {
-    background-color: lightcoral;
+    background-color: white;
     grid-area: subreddits;
     display: flex;
     flex-direction: column;

@@ -1,4 +1,9 @@
 .subredditButton {
     display: flex;
     margin: 0.5rem auto;
+    background-color: transparent;
+}
+
+.subredditButton > button {
+    background-color: transparent;
 }
