@@ -54,7 +54,7 @@ function Post({
   //function for fetching comments based on permalink prop
   //for some reason, have to access permalink inside the fetch, can't put it to its own endpoint
   const getComments = async () => {
-    const response = await fetch(`https://www.reddit.com${permalink}/.json`)
+    const response = await fetch(`https://www.reddit.com${permalink}/.json?limit=20`)
     // console.log(response)
     const raw = await response.json()
     const comments = raw[1].data.children
