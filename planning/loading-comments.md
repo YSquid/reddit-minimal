@@ -1,9 +1,9 @@
 1. Add the 'permalink' prop to the posts addPost action - [x]
 2. Add an empty comments array to the addPost action - [x]
 3. Pass permalink to each rendered post as prop - [x]
-4. On clicking the showComments button on a Post, fire a get request to reddit.com/{permalink}.json?limit=10
-5. Store the retrieved comments in local state
-6. Map over the comments prop to generate a div for each comment with the comment text, and postedAgo. 
+4. On clicking the showComments button on a Post, fire a get request to reddit.com/{permalink}.json?limit=10 - [x]
+5. Store the retrieved comments in local state - [x]
+6. Map over the comments prop to generate a div for each comment with the comment text, and postedAgo - do this inside the Comments component
 
 Bonus - modularize postedAgo and pass it to the Post and Comment component from module
 

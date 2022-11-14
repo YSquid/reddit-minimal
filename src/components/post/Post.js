@@ -17,6 +17,7 @@ function Post({
   created_utc,
   permalink
 }) {
+  const [comments, setComments] = useState([])
   const [showComments, setShowComments] = useState(false);
   const [votes, setVotes] = useState(ups-downs)
   const [upActive, setUpActive] = useState(false)
@@ -53,11 +54,12 @@ function Post({
   //function for fetching comments based on permalink prop
   //for some reason, have to access permalink inside the fetch, can't put it to its own endpoint
   const getComments = async () => {
-    console.log(permalink)
     const response = await fetch(`https://www.reddit.com${permalink}/.json`)
-    console.log(response)
+    // console.log(response)
     const raw = await response.json()
-    console.log(raw)
+    const comments = raw[1].data.children
+    console.log(comments)
+    setComments(comments)
   }
 
   return (
@@ -89,7 +91,7 @@ function Post({
             </button>
           </div>
         </div>
-        <div className="comments">{showComments && <Comments />}</div>
+        <div className="comments">{showComments && <Comments comments={comments} />}</div>
       </div>
     </div>
   );
