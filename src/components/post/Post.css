@@ -9,7 +9,13 @@
     grid-area: votes;
     text-align: center;
     font-size: 3rem;
-    margin-top: 10rem;
+    margin: auto;
+    width: 6rem;
+}
+
+.Votes > p {
+    width: 100%;
+    font-size: 1rem;
 }
 
 .postBody {
@@ -20,8 +26,8 @@
 }
 
 .postTitle {
-    font-size: 2rem;
-    height: 2rem;
+    font-size: 1.5rem;
+    height: auto;
     margin-bottom: 1rem;
 }
 

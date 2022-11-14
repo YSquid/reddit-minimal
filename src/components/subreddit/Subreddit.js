@@ -15,7 +15,7 @@ function Subreddit({ subredditTitle, icon }) {
     <div className="subredditButton">
       <button type='submit' onClick={handleSubredditClick}>
         <img src={icon} />
-        <h2>{subredditTitle}</h2>
+        <h2>r/{subredditTitle}</h2>
       </button>
     </div>
   );

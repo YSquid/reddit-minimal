@@ -5,6 +5,7 @@ import PHicon from "../../assets/PH-icon.jpg";
 
 const initialState = {
   subreddits: [
+    {subredditTitle: 'pics'},
     { subredditTitle: "javascript" },
     { subredditTitle: "ProgrammerHumor" },
     { subredditTitle: "reactjs" },
