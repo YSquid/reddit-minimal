@@ -10,6 +10,7 @@
   padding: 0.25rem 0;
   margin-right: 1rem;
   display: flex;
+  font-family: sans-serif;
 }
 
 #searchForm {
@@ -30,6 +31,7 @@
   background-color: transparent;
   padding-top: 0.1rem;
 }
+
 
 /*Media Queries*/
 
