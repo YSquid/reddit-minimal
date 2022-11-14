@@ -11,3 +11,6 @@ Bonus - modularize postedAgo and pass it to the Post and Comment component from 
 
 4. Update the appropraite entry in the posts array with comments = response. Use the key prop to access i.e. the first post is keyed with 0, so access posts[0].comments = response
 5. Select the comments for the Post inside the post component (use selectPosts selector and then chain the key and .comments) and pass to the Comments component as props
+
+"/r/pics/comments/yuis25/protests_today_in_mexico_city_against_the/"
+"/r/pics/comments/yuis25/protests_today_in_mexico_city_against_the"
