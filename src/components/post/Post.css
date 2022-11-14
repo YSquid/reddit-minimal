@@ -21,12 +21,14 @@
 .Votes > button {
     background-color: transparent;
     font-size: 1rem;
+    padding: 0.15rem;
 }
 
 .Votes > p {
     width: 100%;
     font-size: 1rem;
     margin-bottom: 0;
+    padding: 0.15rem;
 }
 
 .postBody {
