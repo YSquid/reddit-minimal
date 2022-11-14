@@ -66,9 +66,9 @@ function Post({
   return (
     <div className="Post">
       <div className="Votes">
-        <button onClick={handleUp}><BiUpvote /></button>
+        <button onClick={handleUp}><BiUpvote className='upArrow' /></button>
         <p>{votes}</p>
-        <button onClick={handleDown}><BiDownvote /></button>
+        <button onClick={handleDown}><BiDownvote classname='downArrow' /></button>
       </div>
       <div className="postBody">
         <div className="postTitle">

@@ -1,3 +1,4 @@
+/*General Styles*/
 .Post {
     display: grid;
     grid-template-columns: 1fr 10fr;
@@ -5,17 +6,24 @@
     'votes body';
 }
 
+/*Votes Styles*/
 .Votes {
     grid-area: votes;
     text-align: center;
     font-size: 3rem;
-    margin: auto;
-    width: 6rem;
+    margin: 0 auto;
+    width: auto;
+}
+
+.Votes > button {
+    background-color: transparent;
+    font-size: 1rem;
 }
 
 .Votes > p {
     width: 100%;
     font-size: 1rem;
+    margin-top: 0.4rem;
 }
 
 .postBody {
