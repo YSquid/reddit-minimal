@@ -1,8 +1,16 @@
 .App {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-areas: 
-  'header header'
-  'posts subreddits';
+  display: flex;
+  flex-direction: column;
   background-color: rgb(243, 243, 243);
+}
+
+.Body {
+  display: flex;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .Body {
+    flex-direction: column;
+  }
 }
