@@ -13,6 +13,9 @@
     font-size: 3rem;
     margin: 0 auto;
     width: auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
 }
 
 .Votes > button {
@@ -23,7 +26,7 @@
 .Votes > p {
     width: 100%;
     font-size: 1rem;
-    margin-top: 0.4rem;
+    margin-bottom: 0;
 }
 
 .postBody {
