@@ -83,7 +83,7 @@
 
 .postFooter {
     display: flex;
-    font-size: 1rem;
+    font-size: 1.1rem;
     justify-content: space-between;
     padding: 0.5rem 0 0 1.25rem;
     border-top: 2px solid rgb(243,243,243);
@@ -94,9 +94,10 @@
     color: var(--reddit-orange);
 }
 
+
 .commentsToggle {
     display: flex;
-    font-size: 1rem;
+    font-size: 1.1rem;
     background-color: transparent;
 }
 

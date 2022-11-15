@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css";
-import { FcReddit, FcSearch } from "react-icons/fc";
+import { FcReddit } from "react-icons/fc";
+import { HiOutlineSearch } from "react-icons/hi";
 import { setSearchTerm, filterPosts } from "../posts/redditSlice";
 import { useDispatch } from "react-redux";
 
@@ -19,24 +20,26 @@ function Header() {
   //These filtered posts have their own peice of state in the redditSlice
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    dispatch(filterPosts(localSearchTerm))
-    dispatch(setSearchTerm(localSearchTerm))
+    dispatch(filterPosts(localSearchTerm));
+    dispatch(setSearchTerm(localSearchTerm));
   };
-  
+
   //handleClear function that runs on 'onInput'
   //only does something if the event target value is empty string (i.e. the input is cleared)
   //in that case, it dispatches the action to set searchTerm in redditSlice to ''
   const handleClear = (e) => {
-    if (e.target.value === '') {
-      dispatch(setSearchTerm(e.target.value))
+    if (e.target.value === "") {
+      dispatch(setSearchTerm(e.target.value));
     }
-  }
-
+  };
 
   return (
     <div className="Header">
       <h1 id="mainLogo">
-        <FcReddit id="redditLogo" /><p><span id='orangeReddit'>Reddit</span>Minimal</p>
+        <FcReddit id="redditLogo" />
+        <p>
+          <span id="orangeReddit">Reddit</span>Minimal
+        </p>
       </h1>
       <form id="searchForm" role="search" onSubmit={handleSearchSubmit}>
         <input
@@ -48,7 +51,7 @@ function Header() {
           value={localSearchTerm}
         />
         <button id="searchIcon">
-          <FcSearch />
+          <HiOutlineSearch />
         </button>
       </form>
     </div>

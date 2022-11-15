@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Post.css";
 import Comments from "../comments/Comments";
-import { BiUpvote, BiDownvote, BiCommentDetail } from "react-icons/bi";
+import { BiUpvote, BiDownvote } from "react-icons/bi";
+import {GoComment} from 'react-icons/go'
 import {FaRedditSquare} from 'react-icons/fa'
 
 function Post({
@@ -87,7 +88,7 @@ function Post({
           <p>{postedAgo(created_utc)}</p>
           <div className="commentsWidget">
             <button className="commentsToggle" onClick={toggleComments}>
-              <BiCommentDetail />
+              <GoComment />
               <p>&nbsp; 4.2k</p>
             </button>
           </div>
