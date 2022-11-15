@@ -36,7 +36,7 @@ function Header() {
   return (
     <div className="Header">
       <h1 id="mainLogo">
-        <FcReddit id="redditLogo" /><p>RedditMinimal</p>
+        <FcReddit id="redditLogo" /><p><span id='orangeReddit'>Reddit</span>Minimal</p>
       </h1>
       <form id="searchForm" role="search" onSubmit={handleSearchSubmit}>
         <input

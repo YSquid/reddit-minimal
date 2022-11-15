@@ -83,7 +83,7 @@ function Post({
           </a>
         </div>
         <div className="postFooter">
-          <p>{author}</p>
+          <p id='postAuthor'>{author}</p>
           <p>{postedAgo(created_utc)}</p>
           <div className="commentsWidget">
             <button className="commentsToggle" onClick={toggleComments}>

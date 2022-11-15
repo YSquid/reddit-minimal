@@ -50,6 +50,22 @@
     margin-bottom: 1rem;
 }
 
+.postTitle > a {
+    text-decoration: none;
+}
+
+.postTitle > a:link {
+    color: var(--semi-black);
+}
+
+.postTitle > a:visited {
+    color: var(--reddit-purple)
+}
+
+.postTitle > a:hover {
+    color: var(--reddit-orange)
+}
+
 .postPreview {
     width: 100%;
 }
@@ -72,6 +88,10 @@
     padding: 0.5rem 0 0 1.25rem;
     border-top: 2px solid rgb(243,243,243);
     margin-top: 0.5rem
+}
+
+#postAuthor {
+    color: var(--reddit-orange);
 }
 
 .commentsToggle {
