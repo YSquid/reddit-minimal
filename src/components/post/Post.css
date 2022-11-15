@@ -4,6 +4,11 @@
     grid-template-columns: 1fr 10fr;
     grid-template-areas: 
     'votes body';
+    background-color: white;
+    filter: drop-shadow(-0.2rem -0.2rem 1rem rgb(220,220,220));
+    filter: drop-shadow(0.2rem 0.2rem 1rem rgb(220,220,220));
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
 }
 
 /*Votes Styles*/

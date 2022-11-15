@@ -4,6 +4,14 @@
   border: 0;
   outline: 0;
   box-sizing: border-box;
+  color: var(--semi-black)
 }
 
+:root {
+  --reddit-orange: #FF5700;
+  --upvote: #FF8b60;
+  --downvote: #9494FF;
+  --dark-grey: #545452;
+  --semi-black: #222222de;
+}
 
