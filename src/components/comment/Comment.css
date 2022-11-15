@@ -1,0 +1,22 @@
+.Comment {
+  margin: 0.5rem auto;
+  background-color: var(--custom-grey);
+  border-radius: 0.5rem;
+}
+
+.Comment:hover {
+    filter: drop-shadow(0.3rem 0.3rem 1rem var(--semi-black));
+}
+
+.commentAuthor {
+  color: var(--reddit-orange);
+  padding: 0.5rem 1rem;
+}
+
+.commentBody {
+  padding: 0.5rem 1rem;
+}
+
+.commentPostedAgo {
+  padding: 0.5rem 1rem;
+}
