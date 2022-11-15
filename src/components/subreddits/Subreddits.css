@@ -4,10 +4,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 40rem;
+    height: fit-content;
     margin: 1rem;
     padding: 1rem;
     filter: drop-shadow(0rem -0.2rem 1rem rgb(220,220,220));
     filter: drop-shadow(0rem 0.2rem 1rem rgb(220,220,220));
     border-radius: 0.5rem;
+}
+
+#redditSpan {
+    color: var(--reddit-orange)
+}
+
+.subredditsContainer {
+    padding: 0 1rem;
 }

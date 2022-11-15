@@ -1,6 +1,5 @@
 import React from "react";
 import "./Subreddit.css";
-import { FaRedditSquare } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import {updateSelectedSubreddit, setSearchTerm} from '../posts/redditSlice'
 
@@ -14,8 +13,7 @@ function Subreddit({ subredditTitle, icon }) {
   return (
     <div className="subredditButton">
       <button type='submit' onClick={handleSubredditClick}>
-        <img src={icon} />
-        <h2>r/{subredditTitle}</h2>
+        <h2><span id='orangeR'>r/</span>{subredditTitle}</h2>
       </button>
     </div>
   );

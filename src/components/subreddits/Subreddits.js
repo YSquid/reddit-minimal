@@ -10,7 +10,7 @@ function Subreddits() {
 
   return (
     <div className='Subreddits'>
-      <h1>Subreddits</h1>
+      <h1>Sub<span id='redditSpan'>reddit</span>s</h1>
       <div className='subredditsContainer'>
         {subreddits.map((subreddit, index) => {
           const {subredditTitle, icon} = subreddit

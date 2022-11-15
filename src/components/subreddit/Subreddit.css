@@ -1,9 +1,20 @@
 .subredditButton {
     display: flex;
-    margin: 0.5rem auto;
+    margin: 1rem auto;
     background-color: transparent;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
 }
 
 .subredditButton > button {
     background-color: transparent;
+}
+
+#orangeR {
+    color: var(--reddit-orange)
+}
+
+.subredditButton:hover {
+    background-color: var(--light-grey);
 }
