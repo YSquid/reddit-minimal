@@ -90,7 +90,7 @@ function Post({
         <button onClick={handleUp}>
           <BiUpvote className={activeVote === '#up' ? 'upVoteActive' : 'upVote'}/>
         </button>
-        <p>{votes}</p>
+        <p className={activeVote === '#up' ? 'votedUp' : activeVote === '#down' ? 'votedDown' : 'notVoted'}>{votes}</p>
         <button onClick={handleDown}>
           <BiDownvote className={activeVote === '#down' ? 'downVoteActive' : 'downVote'} />
         </button>

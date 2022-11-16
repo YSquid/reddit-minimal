@@ -1,116 +1,127 @@
 /*General Styles*/
 .Post {
-    display: grid;
-    grid-template-columns: 1fr 10fr;
-    grid-template-areas: 
-    'votes body';
-    background-color: white;
-    filter: drop-shadow(-0.2rem -0.2rem 1rem rgb(220,220,220));
-    filter: drop-shadow(0.2rem 0.2rem 1rem rgb(220,220,220));
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  grid-template-areas: "votes body";
+  background-color: white;
+  filter: drop-shadow(-0.2rem -0.2rem 1rem rgb(220, 220, 220));
+  filter: drop-shadow(0.2rem 0.2rem 1rem rgb(220, 220, 220));
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
 }
 
 /*Votes Styles*/
 .Votes {
-    grid-area: votes;
-    text-align: center;
-    font-size: 3rem;
-    margin: 0 auto;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    padding-top: 1rem;
+  grid-area: votes;
+  text-align: center;
+  font-size: 3rem;
+  margin: 0 auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
 }
 
 .Votes > button {
-    background-color: transparent;
-    font-size: 1.2rem;
-    padding: 0.15rem;
-    font-weight: 900;
+  background-color: transparent;
+  font-size: 1.2rem;
+  padding: 0.15rem;
+  font-weight: 900;
 }
 
 .Votes > p {
-    width: 100%;
-    font-size: 1rem;
-    margin-bottom: 0;
-    padding: 0.15rem;
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 0;
+  padding: 0.15rem;
 }
 
-.upVoteActive{
+.upVote:hover {
+  color: var(--upvote);
+}
+
+.upVoteActive {
+  color: var(--upvote);
+}
+
+.downVote:hover {
+  color: var(--downvote);
+}
+.downVoteActive {
+  color: var(--downvote);
+}
+
+.votedUp {
     color: var(--upvote)
 }
 
-.downVoteActive {
+.votedDown {
     color: var(--downvote)
 }
 
-
-
 /*Post Body and Footer Styles*/
 .postBody {
-    grid-area: body;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
+  grid-area: body;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .postTitle {
-    font-size: 1.5rem;
-    height: auto;
-    margin-bottom: 1rem;
+  font-size: 1.5rem;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
 .postTitle > a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .postTitle > a:link {
-    color: var(--semi-black);
+  color: var(--semi-black);
 }
 
 .postTitle > a:visited {
-    color: var(--reddit-purple)
+  color: var(--reddit-purple);
 }
 
 .postTitle > a:hover {
-    color: var(--reddit-orange)
+  color: var(--reddit-orange);
 }
 
 .postPreview {
-    width: 100%;
+  width: 100%;
 }
-.postPreview > img{
-    width: 100%;
-    
+.postPreview > img {
+  width: 100%;
 }
 
 .postPreview > a > img {
-    background-color: black;
-    width: 25%;
-    height: 100%;
-
+  background-color: black;
+  width: 25%;
+  height: 100%;
 }
 
 .postFooter {
-    display: flex;
-    font-size: 1.1rem;
-    justify-content: space-between;
-    padding: 0.5rem 0 0 1.25rem;
-    border-top: 2px solid rgb(243,243,243);
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-
+  display: flex;
+  font-size: 1.1rem;
+  justify-content: space-between;
+  padding: 0.5rem 0 0 1.25rem;
+  border-top: 2px solid rgb(243, 243, 243);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 #postAuthor {
-    color: var(--reddit-orange);
+  color: var(--reddit-orange);
 }
-
 
 .commentsToggle {
-    display: flex;
-    font-size: 1.1rem;
-    background-color: transparent;
+  display: flex;
+  font-size: 1.1rem;
+  background-color: transparent;
 }
 
+.commentsToggle:hover {
+  color: var(--reddit-orange);
+}
