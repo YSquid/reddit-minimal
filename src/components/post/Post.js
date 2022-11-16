@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./Post.css";
 import Comments from "../comments/Comments";
 import { BiUpvote, BiDownvote } from "react-icons/bi";
-import {GoComment} from 'react-icons/go'
-import {FaRedditSquare} from 'react-icons/fa'
+import { GoComment } from "react-icons/go";
+import { FaRedditSquare } from "react-icons/fa";
 
 function Post({
   id,
@@ -17,59 +17,78 @@ function Post({
   downs,
   postedAgo,
   created_utc,
-  permalink
+  permalink,
 }) {
-  const [comments, setComments] = useState([])
+  const [comments, setComments] = useState([]);
   const [showComments, setShowComments] = useState(false);
-  const [votes, setVotes] = useState(ups-downs)
-  const [upActive, setUpActive] = useState(false)
-  const [downActive, setDownActive] = useState(false)
-  
+  const [votes, setVotes] = useState(ups - downs);
+  const [upActive, setUpActive] = useState(false);
+  const [downActive, setDownActive] = useState(false);
+  const [activeVote, setActiveVote] = useState("#");
+
   //handle upvote (local state)
   const handleUp = () => {
     if (upActive === false) {
-      setUpActive(true)
-      setVotes(votes + 1)
+      setUpActive(true);
+      setVotes(votes + 1);
     } else {
-      setUpActive(false)
-      setVotes(votes - 1)
+      setUpActive(false);
+      setVotes(votes - 1);
     }
-  }
+
+    if (activeVote === "#up") {
+      setActiveVote("#");
+    } else {
+      setActiveVote("#up");
+    }
+  };
 
   //handle downvote (local state)
   const handleDown = () => {
     if (downActive === false) {
-      setDownActive(true)
-      setVotes(votes - 1)
+      setDownActive(true);
+      setVotes(votes - 1);
     } else {
-      setDownActive(false)
-      setVotes(votes + 1)
+      setDownActive(false);
+      setVotes(votes + 1);
     }
-  }
+
+    if (activeVote === '#down') {
+      setActiveVote('#')
+    } else {
+      setActiveVote('#down')
+    }
+  };
 
   //toggle showing comments
   const toggleComments = () => {
     setShowComments(!showComments);
     getComments();
   };
-  
+
   //function for fetching comments based on permalink prop
   //for some reason, have to access permalink inside the fetch, can't put it to its own endpoint
   const getComments = async () => {
-    const response = await fetch(`https://www.reddit.com${permalink}/.json?limit=20`)
+    const response = await fetch(
+      `https://www.reddit.com${permalink}/.json?limit=20`
+    );
     // console.log(response)
-    const raw = await response.json()
-    const comments = raw[1].data.children
-    console.log(comments)
-    setComments(comments)
-  }
+    const raw = await response.json();
+    const comments = raw[1].data.children;
+    console.log(comments);
+    setComments(comments);
+  };
 
   return (
     <div className="Post">
       <div className="Votes">
-        <button onClick={handleUp}><BiUpvote className='upArrow' /></button>
+        <button onClick={handleUp}>
+          <BiUpvote className={activeVote === '#up' ? 'upVoteActive' : 'upVote'}/>
+        </button>
         <p>{votes}</p>
-        <button onClick={handleDown}><BiDownvote classname='downArrow' /></button>
+        <button onClick={handleDown}>
+          <BiDownvote className={activeVote === '#down' ? 'downVoteActive' : 'downVote'} />
+        </button>
       </div>
       <div className="postBody">
         <div className="postTitle">
@@ -80,11 +99,15 @@ function Post({
         <div className="postPreview">
           <a href={url} target="_blank" rel="noreferrer">
             {/*I only want to show an image if showUrl is true. showUrl is set in the Posts component*/}
-            {showUrl ? <img src={url} alt={`${title}`} className='previewUrl' /> : <FaRedditSquare className="previewPlaceholder"/>}
+            {showUrl ? (
+              <img src={url} alt={`${title}`} className="previewUrl" />
+            ) : (
+              <FaRedditSquare className="previewPlaceholder" />
+            )}
           </a>
         </div>
         <div className="postFooter">
-          <p id='postAuthor'>{author}</p>
+          <p id="postAuthor">{author}</p>
           <p>{postedAgo(created_utc)}</p>
           <div className="commentsWidget">
             <button className="commentsToggle" onClick={toggleComments}>
@@ -93,7 +116,9 @@ function Post({
             </button>
           </div>
         </div>
-        <div className="comments">{showComments && <Comments comments={comments} />}</div>
+        <div className="comments">
+          {showComments && <Comments comments={comments} />}
+        </div>
       </div>
     </div>
   );

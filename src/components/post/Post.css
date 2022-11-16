@@ -25,8 +25,9 @@
 
 .Votes > button {
     background-color: transparent;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 0.15rem;
+    font-weight: 900;
 }
 
 .Votes > p {
@@ -35,6 +36,16 @@
     margin-bottom: 0;
     padding: 0.15rem;
 }
+
+.upVoteActive{
+    color: var(--upvote)
+}
+
+.downVoteActive {
+    color: var(--downvote)
+}
+
+
 
 /*Post Body and Footer Styles*/
 .postBody {
