@@ -92,11 +92,11 @@ function Post({
   return (
     <div className="Post">
       <div className="Votes">
-        <button onClick={handleUp}>
+        <button onClick={handleUp} aria-label="upvote button">
           <BiUpvote className={activeVote === '#up' ? 'upVoteActive' : 'upVote'}/>
         </button>
         <p className={activeVote === '#up' ? 'votedUp' : activeVote === '#down' ? 'votedDown' : 'notVoted'}>{formattedVotes(votes)}</p>
-        <button onClick={handleDown}>
+        <button onClick={handleDown} aria-label="downvote button">
           <BiDownvote className={activeVote === '#down' ? 'downVoteActive' : 'downVote'} />
         </button>
       </div>
@@ -107,7 +107,7 @@ function Post({
           </a>
         </div>
         <div className="postPreview">
-          <a href={url} target="_blank" rel="noreferrer">
+          <a href={url} target="_blank" rel="noreferrer" aria-label={`link to ${title}`}>
             {/*I only want to show an image if showUrl is true. showUrl is set in the Posts component*/}
             {showUrl ? (
               <img src={url} alt={`${title}`} className="previewUrl" />
