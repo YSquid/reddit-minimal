@@ -16,6 +16,10 @@
     color: var(--reddit-orange)
 }
 
+#orangeR {
+    color: var(--reddit-orange)
+}
+
 .subredditsContainer {
     padding: 0 1rem;
 }

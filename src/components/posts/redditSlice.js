@@ -6,7 +6,7 @@ const initialState = {
   isLoading: false,
   errorLoading: false,
   searchTerm: "",
-  selectedSubreddit: "pics",
+  selectedSubreddit: "r/pics",
 };
 
 export const redditSlice = createSlice({

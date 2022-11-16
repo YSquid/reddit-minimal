@@ -28,9 +28,9 @@ function Subreddits() {
         {subreddits.map((subreddit, index) => {
           const {subredditTitle} = subreddit
           return (
-            <div className={activeSubreddit === subredditTitle ? 'subredditActive' : 'subreddit'} key={index}>
+            <div className={activeSubreddit === `r/${subredditTitle}` ? 'subredditActive' : 'subreddit'} key={index}>
             <button type='submit' onClick={handleSubredditClick}>
-              <h2>{subredditTitle}</h2>
+              <h2><span id="orangeR">r/</span>{subredditTitle}</h2>
             </button>
           </div>
           )
