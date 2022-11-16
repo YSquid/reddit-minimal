@@ -69,8 +69,8 @@ function Posts() {
           const postedAgo = (created_utc) => {
             const secondsElapsed = Date.now() - created_utc * 1000;
             const hoursRaw = secondsElapsed / 3600000;
-            const hoursElapsed = Math.floor(hoursRaw);
             const minutesElapsed = Math.floor(hoursRaw * 60);
+            const hoursElapsed = Math.floor(hoursRaw);
             const daysElapsed = Math.floor(hoursElapsed / 24);
             const weeksElapsed = Math.floor(hoursElapsed / 168);
             const monthsElapsed = Math.floor(hoursElapsed / 744);
