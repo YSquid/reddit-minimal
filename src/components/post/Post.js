@@ -6,10 +6,7 @@ import { GoComment } from "react-icons/go";
 import { FaRedditSquare } from "react-icons/fa";
 
 function Post({
-  id,
-  name,
   title,
-  thumbnail,
   author,
   url,
   showUrl,
@@ -71,6 +68,14 @@ function Post({
     getComments();
   };
 
+  const formattedVotes = (votes) => {
+    if (votes < 1000) {
+      return votes
+    } else {
+      return `${(votes / 1000).toFixed(1)}k`
+    }
+  }
+
   //function for fetching comments based on permalink prop
   //for some reason, have to access permalink inside the fetch, can't put it to its own endpoint
   const getComments = async () => {
@@ -90,7 +95,7 @@ function Post({
         <button onClick={handleUp}>
           <BiUpvote className={activeVote === '#up' ? 'upVoteActive' : 'upVote'}/>
         </button>
-        <p className={activeVote === '#up' ? 'votedUp' : activeVote === '#down' ? 'votedDown' : 'notVoted'}>{votes}</p>
+        <p className={activeVote === '#up' ? 'votedUp' : activeVote === '#down' ? 'votedDown' : 'notVoted'}>{formattedVotes(votes)}</p>
         <button onClick={handleDown}>
           <BiDownvote className={activeVote === '#down' ? 'downVoteActive' : 'downVote'} />
         </button>
