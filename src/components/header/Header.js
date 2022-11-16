@@ -44,7 +44,7 @@ function Header() {
   const theme = useSelector(selectTheme)
 
   return (
-    <div className='Header'>
+    <div className={theme === 'light' ? 'Header' : 'Header-Dark'}>
       <button className="toggleTheme" onClick={toggleTheme}>ToggleTheme</button>
       <h1 id="mainLogo">
         <FcReddit id="redditLogo" />
