@@ -59,7 +59,7 @@
     color: var(--downvote)
 }
 
-/*Post Body and Footer Styles*/
+/*Post Body Styles*/
 .postBody {
   grid-area: body;
   padding: 1rem;
@@ -102,6 +102,11 @@
   height: 100%;
 }
 
+.previewPlaceholder {
+    font-size: 4rem;
+}
+
+/*Post footer Styles*/
 .postFooter {
   display: flex;
   font-size: 1.1rem;
@@ -124,4 +129,22 @@
 
 .commentsToggle:hover {
   color: var(--reddit-orange);
+}
+
+@media only screen and (max-width: 500px) {
+    .Post {
+        overflow: scroll;
+    }
+
+    .postTitle {
+        font-size: 1.2rem;
+    }
+
+    .postFooter {
+        font-size: 0.8rem;
+    }
+
+    .commentsToggle {
+        font-size: 0.9rem;
+    }
 }
