@@ -12,6 +12,10 @@
     border-radius: 0.5rem;
 }
 
+button {
+    display: block;
+}
+
 #redditSpan {
     color: var(--reddit-orange)
 }
@@ -25,8 +29,14 @@
 }
 
 .subreddit {
-    background-color: white;
-    color: white;
+    background-color: transparent;
+    padding: 0.5rem;
+}
+
+
+.subreddit > button:hover {
+    color: var(--reddit-orange);
+    cursor: pointer;
 }
 
 .subreddit > button  {
@@ -35,9 +45,11 @@
 
 .subredditActive {
     background-color: var(--light-grey);
-    border-left: 2px solid var(--light-grey);
+    border-left: 3px solid var(--semi-black);
+    padding: 0.5rem;
 }
 
 .subredditActive > button {
     background-color: transparent;
+    color: var(--reddit-orange)
 }
