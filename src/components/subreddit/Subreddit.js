@@ -3,7 +3,7 @@ import "./Subreddit.css";
 import { useDispatch } from "react-redux";
 import {updateSelectedSubreddit, setSearchTerm} from '../posts/redditSlice'
 
-function Subreddit({ subredditTitle, icon }) {
+function Subreddit({ subredditTitle}) {
   const dispatch = useDispatch();
   const handleSubredditClick = (e) => {
     e.preventDefault();
