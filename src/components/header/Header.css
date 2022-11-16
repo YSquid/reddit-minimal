@@ -4,6 +4,16 @@
   height: 3rem;
   display: flex;
   justify-content: center;
+  width: 100%;
+}
+
+.Header-Dark {
+  background-color: black;
+  grid-area: header;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 #mainLogo {

@@ -6,6 +6,13 @@
   color: #304553;
 }
 
+.App-Dark {
+  display: flex;
+  flex-direction: column;
+  background-color: --var(--semi-black);
+  font-family: 'Poppins', sans-serif;
+  color: #304553;
+}
 .Body {
   display: flex;
 }
