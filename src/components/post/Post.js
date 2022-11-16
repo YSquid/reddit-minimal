@@ -27,6 +27,8 @@ function Post({
   const [activeVote, setActiveVote] = useState("#");
 
   //handle upvote (local state)
+  //first part of function tracks if up is active for vote tallying purposes
+  //second part of the function checks if the activeVote is equal to up and sets accordingly (for styling)
   const handleUp = () => {
     if (upActive === false) {
       setUpActive(true);
@@ -44,6 +46,8 @@ function Post({
   };
 
   //handle downvote (local state)
+  //first part of function tracks if down is active for vote tallying purposes
+  //second part of the function checks if the activeVote is equal to down and sets accordingly (for styling)
   const handleDown = () => {
     if (downActive === false) {
       setDownActive(true);
