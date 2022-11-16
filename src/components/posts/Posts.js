@@ -49,7 +49,7 @@ function Posts() {
   return (
     <div className="Posts">
       {posts.map((post, index) => {
-        const { id, name, title, thumbnail, author, url, ups, downs, created_utc, permalink } =
+        const { id, name, title, thumbnail, author, url, ups, downs, created_utc, permalink, num_comments } =
           post;
 
         //if the url for the post includes gallery, we won't show the url as preview image (more logic needed as I expand outside /r/pics)
@@ -105,6 +105,7 @@ function Posts() {
             postedAgo={postedAgo}
             created_utc={created_utc}
             permalink={permalink}
+            num_comments={num_comments}
           />
         );
       })}

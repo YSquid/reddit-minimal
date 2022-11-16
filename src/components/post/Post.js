@@ -18,6 +18,7 @@ function Post({
   postedAgo,
   created_utc,
   permalink,
+  num_comments
 }) {
   const [comments, setComments] = useState([]);
   const [showComments, setShowComments] = useState(false);
@@ -116,7 +117,7 @@ function Post({
           <div className="commentsWidget">
             <button className="commentsToggle" onClick={toggleComments}>
               <GoComment />
-              <p>&nbsp; 4.2k</p>
+              <p>&nbsp; {num_comments}</p>
             </button>
           </div>
         </div>
