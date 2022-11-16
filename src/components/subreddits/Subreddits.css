@@ -19,3 +19,21 @@
 .subredditsContainer {
     padding: 0 1rem;
 }
+
+.subreddit {
+    background-color: white;
+    color: white;
+}
+
+.subreddit > button  {
+    background-color: white;
+}
+
+.subredditActive {
+    background-color: var(--light-grey);
+    border-left: 2px solid var(--light-grey);
+}
+
+.subredditActive > button {
+    background-color: transparent;
+}
