@@ -10,6 +10,10 @@
   border-radius: 0.5rem;
 }
 
+.Post:hover {
+    outline: 1px solid var(--semi-black)
+}
+
 /*Votes Styles*/
 .Votes {
   grid-area: votes;
@@ -104,7 +108,15 @@
 
 .previewPlaceholder {
     font-size: 4rem;
+    color: var(--reddit-blue)
 }
+
+.previewPlaceholder:hover {
+    color: var(--reddit-orange)
+}
+
+
+
 
 /*Post footer Styles*/
 .postFooter {
