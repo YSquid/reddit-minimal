@@ -102,7 +102,7 @@
 
 .postPreview > a > img {
   background-color: black;
-  width: 25%;
+  max-width: 50%;
   height: 100%;
 }
 
