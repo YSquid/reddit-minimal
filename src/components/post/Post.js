@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Post.css";
 import Comments from "../comments/Comments";
 import { BiUpvote, BiDownvote } from "react-icons/bi";
 import { GoComment } from "react-icons/go";
 import { FaRedditSquare } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { selectSelectedSubreddit } from "../posts/redditSlice";
 
 function Post({
   title,
@@ -15,7 +17,7 @@ function Post({
   postedAgo,
   created_utc,
   permalink,
-  num_comments
+  num_comments,
 }) {
   const [comments, setComments] = useState([]);
   const [showComments, setShowComments] = useState(false);
@@ -23,6 +25,12 @@ function Post({
   const [upActive, setUpActive] = useState(false);
   const [downActive, setDownActive] = useState(false);
   const [activeVote, setActiveVote] = useState("#");
+
+  const selectedSubreddit = useSelector(selectSelectedSubreddit);
+
+  useEffect(() => {
+    setComments([])
+  }, [selectedSubreddit])
 
   //handle upvote (local state)
   //first part of function tracks if up is active for vote tallying purposes
@@ -55,10 +63,10 @@ function Post({
       setVotes(votes + 1);
     }
 
-    if (activeVote === '#down') {
-      setActiveVote('#')
+    if (activeVote === "#down") {
+      setActiveVote("#");
     } else {
-      setActiveVote('#down')
+      setActiveVote("#down");
     }
   };
 
@@ -70,11 +78,11 @@ function Post({
 
   const formattedVotes = (votes) => {
     if (votes < 1000) {
-      return votes
+      return votes;
     } else {
-      return `${(votes / 1000).toFixed(1)}k`
+      return `${(votes / 1000).toFixed(1)}k`;
     }
-  }
+  };
 
   //function for fetching comments based on permalink prop
   //for some reason, have to access permalink inside the fetch, can't put it to its own endpoint
@@ -93,11 +101,25 @@ function Post({
     <div className="Post">
       <div className="Votes">
         <button onClick={handleUp} aria-label="upvote button">
-          <BiUpvote className={activeVote === '#up' ? 'upVoteActive' : 'upVote'}/>
+          <BiUpvote
+            className={activeVote === "#up" ? "upVoteActive" : "upVote"}
+          />
         </button>
-        <p className={activeVote === '#up' ? 'votedUp' : activeVote === '#down' ? 'votedDown' : 'notVoted'}>{formattedVotes(votes)}</p>
+        <p
+          className={
+            activeVote === "#up"
+              ? "votedUp"
+              : activeVote === "#down"
+              ? "votedDown"
+              : "notVoted"
+          }
+        >
+          {formattedVotes(votes)}
+        </p>
         <button onClick={handleDown} aria-label="downvote button">
-          <BiDownvote className={activeVote === '#down' ? 'downVoteActive' : 'downVote'} />
+          <BiDownvote
+            className={activeVote === "#down" ? "downVoteActive" : "downVote"}
+          />
         </button>
       </div>
       <div className="postBody">
@@ -107,7 +129,12 @@ function Post({
           </a>
         </div>
         <div className="postPreview">
-          <a href={url} target="_blank" rel="noreferrer" aria-label={`link to ${title}`}>
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`link to ${title}`}
+          >
             {/*I only want to show an image if showUrl is true. showUrl is set in the Posts component*/}
             {showUrl ? (
               <img src={url} alt={`${title}`} className="previewUrl" />
