@@ -94,15 +94,15 @@
 }
 
 .postPreview {
-  width: 100%;
+  max-width: 50%;
 }
 .postPreview > img {
-  width: 100%;
+  max-width: 50%;
 }
 
 .postPreview > a > img {
   background-color: black;
-  max-width: 50%;
+  max-width: 100%;
   height: 100%;
 }
 
