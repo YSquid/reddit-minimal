@@ -94,16 +94,17 @@
 }
 
 .postPreview {
-  max-width: 50%;
+  max-width: 100%;
 }
 .postPreview > img {
-  max-width: 50%;
+  max-width: 60%;
 }
 
 .postPreview > a > img {
   background-color: black;
-  max-width: 100%;
+  max-width: 60%;
   height: 100%;
+
 }
 
 .previewPlaceholder {
