@@ -42,6 +42,7 @@
 
 .upVote:hover {
   color: var(--upvote);
+  cursor: pointer;
 }
 
 .upVoteActive {
@@ -50,6 +51,7 @@
 
 .downVote:hover {
   color: var(--downvote);
+  cursor: pointer;
 }
 .downVoteActive {
   color: var(--downvote);
@@ -142,6 +144,7 @@
 
 .commentsToggle:hover {
   color: var(--reddit-orange);
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 500px) {
