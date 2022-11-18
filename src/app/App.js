@@ -14,7 +14,7 @@ function App() {
       <div className="Header">
         <Header />
       </div>
-      <div className="Body">
+      <div className={theme === 'light' ? 'Body' : 'Body-Dark'}>
         <Posts />
         <Subreddits />
       </div>
