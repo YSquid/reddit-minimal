@@ -14,6 +14,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  color: white;
 }
 
 #mainLogo {
@@ -48,6 +49,18 @@
 }
 
 #searchIcon:hover {
+  color: var(--reddit-orange);
+  cursor: pointer;
+}
+
+#searchIcon-Dark {
+  font-size: 2rem;
+  background-color: transparent;
+  padding-top: 0.1rem;
+  color: white;
+}
+
+#searchIcon-Dark:hover {
   color: var(--reddit-orange);
   cursor: pointer;
 }
