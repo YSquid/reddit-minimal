@@ -56,7 +56,7 @@ button {
 
 @media only screen and (max-width: 800px) {
     .Subreddits {
-        width: 50%;
+        width: 60%;
     }
 
     .Subreddits > h1 {
