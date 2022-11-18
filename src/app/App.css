@@ -12,6 +12,7 @@
 
 @media only screen and (max-width: 800px) {
   .Body {
-    flex-direction: column;
+    flex-direction: column-reverse;
+    align-items: center;
   }
 }
