@@ -69,7 +69,7 @@ function Header() {
           onInput={handleClear}
           value={localSearchTerm}
         />
-        <button id="searchIcon" aria-label="search button" type="submit">
+        <button id={theme === 'light' ? 'searchIcon' : 'searchIcon-Dark'} aria-label="search button">
           <HiOutlineSearch />
         </button>
       </form>
