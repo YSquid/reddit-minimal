@@ -42,6 +42,7 @@
 
 .upVote:hover {
   color: var(--upvote);
+  cursor: pointer;
 }
 
 .upVoteActive {
@@ -50,6 +51,7 @@
 
 .downVote:hover {
   color: var(--downvote);
+  cursor: pointer;
 }
 .downVoteActive {
   color: var(--downvote);
@@ -94,16 +96,17 @@
 }
 
 .postPreview {
-  width: 100%;
+  max-width: 100%;
 }
 .postPreview > img {
-  width: 100%;
+  max-width: 60%;
 }
 
 .postPreview > a > img {
   background-color: black;
-  width: 25%;
+  max-width: 100%;
   height: 100%;
+
 }
 
 .previewPlaceholder {
@@ -141,6 +144,7 @@
 
 .commentsToggle:hover {
   color: var(--reddit-orange);
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 500px) {

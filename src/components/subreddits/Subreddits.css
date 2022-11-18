@@ -1,6 +1,6 @@
 .Subreddits {
     background-color: white;
-    grid-area: subreddits;
+    /* grid-area: subreddits; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,4 +52,22 @@ button {
 .subredditActive > button {
     background-color: transparent;
     color: var(--reddit-orange)
+}
+
+@media only screen and (max-width: 800px) {
+    .Subreddits {
+        width: 60%;
+    }
+
+    .Subreddits > h1 {
+        font-size: 1.7rem;
+    }
+    .subredditsContainer {
+        overflow: scroll;
+        padding: 0.2rem;
+    }
+
+    .subreddit > button > h2 {
+        font-size: 1rem
+    }
 }

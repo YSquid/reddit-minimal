@@ -47,6 +47,10 @@
   color: var(--semi-black)
 }
 
+#searchIcon:hover {
+  color: var(--reddit-orange);
+  cursor: pointer;
+}
 
 /*Media Queries*/
 

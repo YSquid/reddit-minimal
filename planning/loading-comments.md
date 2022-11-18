@@ -15,3 +15,9 @@ Bonus - modularize postedAgo and pass it to the Post and Comment component from 
 
 "/r/pics/comments/yuis25/protests_today_in_mexico_city_against_the/"
 "/r/pics/comments/yuis25/protests_today_in_mexico_city_against_the"
+
+**fixing the bug Gabe found**
+
+1. In Post, have a selector to select selectedSubreddit
+2. Have a useEffect which updates on that selector being changed
+3. In the useEffect, reset comments
