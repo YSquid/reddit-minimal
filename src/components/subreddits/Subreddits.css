@@ -58,4 +58,16 @@ button {
     .Subreddits {
         width: 50%;
     }
+
+    .Subreddits > h1 {
+        font-size: 1.7rem;
+    }
+    .subredditsContainer {
+        overflow: scroll;
+        padding: 0.2rem;
+    }
+
+    .subreddit > button > h2 {
+        font-size: 1rem
+    }
 }
