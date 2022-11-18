@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
-import { FcReddit } from "react-icons/fc";
+import {BsReddit} from 'react-icons/bs'
 import { HiOutlineSearch } from "react-icons/hi";
 import { setSearchTerm, filterPosts, selectTheme, updateTheme } from "../posts/redditSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -47,7 +47,9 @@ function Header() {
     <div className={theme === 'light' ? 'Header' : 'Header-Dark'}>
       <button className="toggleTheme" onClick={toggleTheme}>ToggleTheme</button>
       <h1 id="mainLogo">
-        <FcReddit id="redditLogo" />
+        {
+        theme === 'light' ? <BsReddit id="redditLogo" /> : <BsReddit id='redditLogo-Dark'/>
+        }
         <p>
           <span id="orangeReddit">Reddit</span>Minimal
         </p>
