@@ -9,14 +9,10 @@ import {updateSelectedSubreddit, setSearchTerm} from '../posts/redditSlice'
 function Subreddits() {
   //variable which tracks which subreddit div is the active one for stlying
   const [activeSubreddit, setActiveSubreddit] = useState('')
-  const [showSubredditsBar, setShowSubredditsBar] = useState(true)
 
   const subreddits = useSelector(selectSubreddits)
   const dispatch = useDispatch();
 
-  const toggleShow = () => {
-    setShowSubredditsBar(!showSubredditsBar)
-  }
 
   //this functiond does 3 things
   //1. dispatch action to store to update selected subreddot
@@ -30,17 +26,9 @@ function Subreddits() {
     setActiveSubreddit(e.target.outerText)
   };
 
-  const styleShow = {
-    display: 'block'
-  }
-
-  const styleHide = {
-    display: 'none'
-  }
-
   return (
     
-    <div className='Subreddits' style={showSubredditsBar ? styleShow : styleHide}>
+    <div className='Subreddits'>
       <h1>Sub<span id='redditSpan'>reddit</span>s</h1>
       <div className='subredditsContainer'>
         {subreddits.map((subreddit, index) => {
