@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import JSicon from "../../assets/JSthumbnail.png";
-import ARicon from "../../assets/question-icon.png";
-import PHicon from "../../assets/PH-icon.jpg";
+
 
 const initialState = {
   subreddits: [
