@@ -97,9 +97,11 @@
 
 .postPreview {
   max-width: 100%;
+  display: flex;
+  align-items: flex-start;
 }
 .postPreview > img {
-  max-width: 60%;
+  max-width: 100%;
 }
 
 .postPreview > a > img {
