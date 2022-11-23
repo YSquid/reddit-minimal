@@ -4,3 +4,4 @@ This project was completed as the final project for the Front End Development se
 
 The live project can be [viewed here.](https://ak-reddit-minimal.netlify.app/)
 
+![A screenshot of the RedditMinimal App](./src/assets/appPreview.PNG)
