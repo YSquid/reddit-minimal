@@ -6,11 +6,11 @@ import Subreddits from "../components/subreddits/Subreddits";
 
 function App() {
   return (
-    <div className="App">
-      <div className="Header">
+    <div className="App" data-testid="App">
+      <div className="Header" data-testid="Header">
         <Header />
       </div>
-      <div className="Body">
+      <div className="Body" data-testid="Body">
         <Posts />
         <Subreddits />
       </div>

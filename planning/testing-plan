@@ -1,0 +1,6 @@
+**Pre-req:**
+-Ensure testing libraries installs (testing-library/jest-dom, testing-library/react, testing-library/user-event) [x]
+
+App Component:
+ 1) Ensure that the App, Header, and Body divs are in document (query by role, {name})
+ 2) Ensure that the Header, Posts, and Subreddits components are in document (query by testId)
