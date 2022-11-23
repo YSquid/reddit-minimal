@@ -2,5 +2,21 @@
 -Ensure testing libraries installs (testing-library/jest-dom, testing-library/react, testing-library/user-event) [x]
 
 App Component:
- 1) Ensure that the App, Header, and Body divs are in document (query by role, {name})
- 2) Ensure that the Header, Posts, and Subreddits components are in document (query by testId)
+ 1. Ensure that the App, Header, and Body divs are in document (query by role, {name})
+ 2. Ensure that the Header, Posts, and Subreddits components are in document (query by testId)
+
+Header Component:
+
+Describe - Header Component Tests
+
+Describe - Header compnents render:
+
+ 1. Ensure the top-level div renders
+ 2. Ensure the form with name searchForm renders
+ 3. Ensure that input with name searchBar renders
+
+ Describe - Searchbar functionality
+
+ 1. Searchbar initially renders empty value w/ placeholder "search for something"
+ 2. On entering a 'searchValue', the value updates to 'searchValue'
+ 3. On submitting search, localSearchTerm updates to 'searchValue'

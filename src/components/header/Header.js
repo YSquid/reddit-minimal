@@ -34,23 +34,24 @@ function Header() {
   };
 
   return (
-    <div className="Header">
+    <div className="Header" data-testid="Header">
       <h1 id="mainLogo">
         <FcReddit id="redditLogo" />
         <p>
           <span id="orangeReddit">Reddit</span>Minimal
         </p>
       </h1>
-      <form id="searchForm" role="search" onSubmit={handleSearchSubmit}>
+      <form id="searchForm" name ="searchForm" role="search" onSubmit={handleSearchSubmit}>
         <input
           id="searchBar"
+          name="searchBar"
           type="search"
           placeholder="search for something"
           onChange={handleSearchChange}
           onInput={handleClear}
           value={localSearchTerm}
         />
-        <button id="searchIcon" aria-label="search button">
+        <button id="searchIcon" aria-label="search button" type='submit'>
           <HiOutlineSearch />
         </button>
       </form>
