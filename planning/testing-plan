@@ -19,4 +19,3 @@ Describe - Header compnents render:
 
  1. Searchbar initially renders empty value w/ placeholder "search for something"
  2. On entering a 'searchValue', the value updates to 'searchValue'
- 3. On submitting search, localSearchTerm updates to 'searchValue'

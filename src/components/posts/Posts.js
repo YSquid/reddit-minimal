@@ -29,7 +29,6 @@ function Posts() {
       const response = await fetch(endpoint);
       const raw = await response.json();
       const postsFull = raw.data.children;
-      console.log(postsFull)
       //clear the posts so its an empty array to push new posts to on updates to selected subreddit
       dispatch(clearPosts());
       postsFull.forEach((post) => {
@@ -44,8 +43,6 @@ function Posts() {
   //If searchTerm is anything besides '' (i.e. truthy), render the filteredPosts. 
   //If it is '' (i.e. falsy) render allPosts
   const posts = searchTerm ? filteredPosts : allPosts
-
-  console.log(posts)
 
   return (
     <div className="Posts">

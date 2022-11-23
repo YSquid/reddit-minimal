@@ -125,7 +125,7 @@ function Post({
       <div className="postBody">
         <div className="postTitle">
           <a href={url} target="_blank" rel="noreferrer">
-            <p>{title}</p>
+            <p data-testid='postTitle_pTag'>{title}</p>
           </a>
         </div>
         <div className="postPreview">
