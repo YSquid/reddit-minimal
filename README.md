@@ -6,7 +6,7 @@ The live project can be **[viewed here.](https://ak-reddit-minimal.netlify.app/)
 
 
 <br><br>
-<a href='https://ak-reddit-minimal.netlify.app/' target="_blank"><img src="./src/assets/appPreview.png" /></a>
+<a href='https://ak-reddit-minimal.netlify.app/' target="_blank"><img src="./src/assets/appPreview.PNG" /></a>
 <br><br>
 
 ## Table of Content
