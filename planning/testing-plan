@@ -1,21 +1,36 @@
 **Pre-req:**
 -Ensure testing libraries installs (testing-library/jest-dom, testing-library/react, testing-library/user-event) [x]
 
-App Component:
- 1. Ensure that the App, Header, and Body divs are in document (query by role, {name})
- 2. Ensure that the Header, Posts, and Subreddits components are in document (query by testId)
+App Component: [x]
+ 1. Ensure that the App, Header, and Body divs are in document (query by role, {name}) [x]
+ 2. Ensure that the Header, Posts, and Subreddits components are in document (query by testId) [x]
 
-Header Component:
+Header Component: [x]
 
-Describe - Header Component Tests
+Describe - Header Component Tests 
 
-Describe - Header compnents render:
+Describe - Header compnents render: [x] 
 
- 1. Ensure the top-level div renders
- 2. Ensure the form with name searchForm renders
- 3. Ensure that input with name searchBar renders
+ 1. Ensure the top-level div renders [x]
+ 2. Ensure the form with name searchForm renders [x]
+ 3. Ensure that input with name searchBar renders [x]
+    
+ Describe - Searchbar functionality  
 
- Describe - Searchbar functionality
+ 1. Searchbar initially renders empty value w/ placeholder "search for something" [x]
+ 2. On entering a 'searchValue', the value updates to 'searchValue' [x]
+ 3. Can I mock the dispatch somehow and test that is working? Read tutorial on mocking tomrorow and see
+  
+ Subreddits Component:
 
- 1. Searchbar initially renders empty value w/ placeholder "search for something"
- 2. On entering a 'searchValue', the value updates to 'searchValue'
+Describe - Subreddit Component Tests 
+
+Describe - Subreddits components render 
+1. Ensure the top-level div renders
+2. Ensure the subreddits container renders
+3. Ensure subreddits container childElementCount is 11
+   
+Describe - Clicking subreddit updates activeSubreddit
+
+1. Clicking javascript subreddit updates its className to subredditActive
+2. Clicking the javascript subreddit dispatches the updateSelectedSubreddit and setSearchTerm actions

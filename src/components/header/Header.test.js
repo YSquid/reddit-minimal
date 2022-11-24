@@ -1,10 +1,8 @@
-import { getAllByTestId, render, screen } from "@testing-library/react";
+import {render, screen } from "@testing-library/react";
 import Header from "./Header";
-import Posts from "../posts/Posts";
 import { Provider } from "react-redux";
 import store from "../../app/store";
 import userEvent from "@testing-library/user-event";
-import React, { useState } from "react";
 
 describe("Header Component Test", () => {
   beforeEach(() => {

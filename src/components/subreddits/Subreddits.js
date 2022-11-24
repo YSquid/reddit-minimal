@@ -28,7 +28,7 @@ function Subreddits() {
 
   return (
     
-    <div className='Subreddits'>
+    <div className='Subreddits' data-testid="Subreddits">
       <h1>Sub<span id='redditSpan'>reddit</span>s</h1>
       <div className='subredditsContainer'>
         {subreddits.map((subreddit, index) => {
