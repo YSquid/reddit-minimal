@@ -5,15 +5,14 @@ import store from "../../app/store";
 import userEvent from "@testing-library/user-event";
 
 describe("Subreddit Component Tests ", () => {
-  beforeEach(() => {
-    render(
-      <Provider store={store}>
-        <Subreddits />
-      </Provider>
-    );
-  });
-
   describe("Subreddits components render ", () => {
+    beforeEach(() => {
+      render(
+        <Provider store={store}>
+          <Subreddits />
+        </Provider>
+      );
+    });
     test("1. Ensure the top-level div renders", () => {
       const subredditsDiv = screen.getByTestId("Subreddits");
       expect(subredditsDiv).toBeInTheDocument;
@@ -29,13 +28,26 @@ describe("Subreddit Component Tests ", () => {
   });
   describe("Clicking subreddit updates activeSubreddit", () => {
     test("1. Javascript subreddit starts with className of subreddit", () => {
+      render(
+        <Provider store={store}>
+          <Subreddits />
+        </Provider>
+      );
       const jsTitle = screen.getByTestId("r/javascript");
       expect(jsTitle.className).toEqual("subreddit");
     });
-    test("2. Clicking javascript subreddit button updates its classname to subredditActive", async () => {
-      const jsButton = screen.getByTestId("r/javascriptButton");
-      expect(jsButton).toBeInTheDocument;
-      userEvent.click(jsButton)
-    });
+    // test("2. Clicking javascript subreddit button updates its classname to subredditActive", async () => {
+    //   const user = userEvent.setup()
+    //   render(
+    //     <Provider store={store}>
+    //       <Subreddits />
+    //     </Provider>
+    //   );
+    //   const jsButton = screen.getByTestId("r/javascriptButton");
+    //   await user.click(jsButton).then(() => {
+    //     const jsTitle = screen.getByTestId("r/javascript");
+    //     expect(jsTitle.className).toEqual("subredditActive");
+    //   })
+    // });
   });
 });
