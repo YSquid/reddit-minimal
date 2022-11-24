@@ -14,9 +14,28 @@ describe("Subreddit Component Tests ", () => {
   });
 
   describe("Subreddits components render ", () => {
-    test("1. Ensure the top-level div renders", () =>{
-        
-    })
+    test("1. Ensure the top-level div renders", () => {
+      const subredditsDiv = screen.getByTestId("Subreddits");
+      expect(subredditsDiv).toBeInTheDocument;
+    });
+    test("2. Ensure the subreddits container renders", () => {
+      const subredditsContainerDiv = screen.getByTestId("subredditsContainer");
+      expect(subredditsContainerDiv).toBeInTheDocument;
+    });
+    test("3. Ensure subreddits container childElementCount is 11", () => {
+      const subredditsContainerDiv = screen.getByTestId("subredditsContainer");
+      expect(subredditsContainerDiv.childElementCount).toEqual(11);
+    });
   });
-  describe("Clicking subreddit updates activeSubreddit", () => {});
+  describe("Clicking subreddit updates activeSubreddit", () => {
+    test("1. Javascript subreddit starts with className of subreddit", () => {
+      const jsTitle = screen.getByTestId("r/javascript");
+      expect(jsTitle.className).toEqual("subreddit");
+    });
+    test("2. Clicking javascript subreddit button updates its classname to subredditActive", async () => {
+      const jsButton = screen.getByTestId("r/javascriptButton");
+      expect(jsButton).toBeInTheDocument;
+      userEvent.click(jsButton)
+    });
+  });
 });

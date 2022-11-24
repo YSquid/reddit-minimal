@@ -1,19 +1,18 @@
-import {render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Header from "./Header";
 import { Provider } from "react-redux";
 import store from "../../app/store";
 import userEvent from "@testing-library/user-event";
 
 describe("Header Component Test", () => {
-  beforeEach(() => {
-    render(
-      <Provider store={store}>
-        <Header />
-      </Provider>
-    );
-  });
-
   describe("Compnent Rendering Tests", () => {
+    beforeEach(() => {
+      render(
+        <Provider store={store}>
+          <Header />
+        </Provider>
+      );
+    });
     test("1. Ensure the top-level div renders", () => {
       const headerDiv = screen.getByTestId("Header__Header");
       expect(headerDiv).toBeInTheDocument;
@@ -30,13 +29,24 @@ describe("Header Component Test", () => {
 
   describe("Searchbar Functionality Tests", () => {
     test("1. Searchbar initially renders empty value w/ placeholder 'search for something'", () => {
+      render(
+        <Provider store={store}>
+          <Header />
+        </Provider>
+      );
       const searchBar = screen.getByTestId("searchBar");
       expect(searchBar.value).toBe("");
       expect(searchBar.placeholder).toBe("search for something");
     });
-    test("2. On entering a 'searchValue', the value updates to 'searchValue'", () => {
+    test("2. On entering a 'searchValue', the value updates to 'searchValue'", async () => {
+      const user = userEvent.setup();
+      render(
+        <Provider store={store}>
+          <Header />
+        </Provider>
+      );
       const searchBar = screen.getByTestId("searchBar");
-      userEvent.type(searchBar, "searchValue");
+      await user.type(searchBar, "searchValue");
       expect(searchBar.value).toBe("searchValue");
     });
   });

@@ -26,9 +26,9 @@ Describe - Header compnents render: [x]
 Describe - Subreddit Component Tests 
 
 Describe - Subreddits components render 
-1. Ensure the top-level div renders
-2. Ensure the subreddits container renders
-3. Ensure subreddits container childElementCount is 11
+1. Ensure the top-level div renders [x]
+2. Ensure the subreddits container renders [x]
+3. Ensure subreddits container childElementCount is 11 [x]
    
 Describe - Clicking subreddit updates activeSubreddit
 

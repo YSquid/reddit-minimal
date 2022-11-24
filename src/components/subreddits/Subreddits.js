@@ -1,18 +1,16 @@
-import React, {useState} from 'react'
-import './Subreddits.css'
+import React, { useState } from "react";
+import "./Subreddits.css";
 // import Subreddit from '../subreddit/Subreddit'
-import {useSelector, useDispatch} from 'react-redux'
-import {selectSubreddits} from './subredditsSlice'
-import {updateSelectedSubreddit, setSearchTerm} from '../posts/redditSlice'
-
+import { useSelector, useDispatch } from "react-redux";
+import { selectSubreddits } from "./subredditsSlice";
+import { updateSelectedSubreddit, setSearchTerm } from "../posts/redditSlice";
 
 function Subreddits() {
   //variable which tracks which subreddit div is the active one for stlying
-  const [activeSubreddit, setActiveSubreddit] = useState('')
+  const [activeSubreddit, setActiveSubreddit] = useState("");
 
-  const subreddits = useSelector(selectSubreddits)
+  const subreddits = useSelector(selectSubreddits);
   const dispatch = useDispatch();
-
 
   //this functiond does 3 things
   //1. dispatch action to store to update selected subreddot
@@ -21,30 +19,47 @@ function Subreddits() {
   //use e.target.outerText to access the subreddit title from the h2 in button
   const handleSubredditClick = (e) => {
     e.preventDefault();
-    dispatch(updateSelectedSubreddit(e.target.outerText))
-    dispatch(setSearchTerm(''))
-    setActiveSubreddit(e.target.outerText)
+    dispatch(updateSelectedSubreddit(e.target.outerText));
+    dispatch(setSearchTerm(""));
+    setActiveSubreddit(e.target.outerText);
   };
 
   return (
-    
-    <div className='Subreddits' data-testid="Subreddits">
-      <h1>Sub<span id='redditSpan'>reddit</span>s</h1>
-      <div className='subredditsContainer'>
+    <div className="Subreddits" data-testid="Subreddits">
+      <h1>
+        Sub<span id="redditSpan">reddit</span>s
+      </h1>
+      <div className="subredditsContainer" data-testid="subredditsContainer">
         {subreddits.map((subreddit, index) => {
-          const {subredditTitle} = subreddit
+          const { subredditTitle } = subreddit;
           return (
-            //set className depending on if its the activeSubreddit or not. 
-            <div className={activeSubreddit === `r/${subredditTitle}` ? 'subredditActive' : 'subreddit'} key={index}>
-            <button type='submit' onClick={handleSubredditClick}>
-              <h2><span id="orangeR">r/</span>{subredditTitle}</h2>
-            </button>
-          </div>
-          )
+            //set className depending on if its the activeSubreddit or not.
+            <div
+              className={
+                activeSubreddit === `r/${subredditTitle}`
+                  ? "subredditActive"
+                  : "subreddit"
+              }
+              key={index}
+              data-testid={`r/${subredditTitle}`}
+            >
+              <button
+                type="submit"
+                onClick={handleSubredditClick}
+                data-testid={`r/${subredditTitle}Button`}
+                name={`r/${subredditTitle}Button`}
+              >
+                <h2>
+                  <span id="orangeR">r/</span>
+                  {subredditTitle}
+                </h2>
+              </button>
+            </div>
+          );
         })}
       </div>
     </div>
-  )
+  );
 }
 
-export default Subreddits
+export default Subreddits;
