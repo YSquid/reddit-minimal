@@ -98,6 +98,12 @@ Concepts tested include:
 
 **Diagram**
 
+View the **[app architecture diagram on Figma.](https://www.figma.com/file/WFP1Af49yaQGFHvFkfxMJC/RedditMinimal-App-Architecture?node-id=0%3A1&t=fZBgPW65vs9iYp0i-0)**
+
+**Wireframe**
+
+View the **[wireframe on Figma.](https://www.figma.com/file/igFMh3eJF7Pjky1Z6ScjFm/Reddit-Minimal?node-id=0%3A1&t=kelX1Bm6Evn4yXw2-0)**
+
 **Getting Data**
 
 This app uses the [Reddit JSON API](https://github.com/reddit-archive/reddit/wiki/JSON) in order to fetch data from Reddit.
@@ -124,10 +130,24 @@ Data is stored in different slices of state which are ultimately sent to the top
 
 If you would like to improve this project, you may submit [pull requests here.](https://github.com/YSquid/reddit-minimal/pulls).
 
-If you would like to connect with me re: this project you can reach me at:
+If you would like to connect with me you can reach me at:
 - Email: [ahmad.k@ysquid.tech](mailto:ahmad.k@ysquid.tech)
-- Linked: [Ahmad Kariem](https://www.linkedin.com/in/ahmad-kariem/)
+- LinkedIn: [Ahmad Kariem](https://www.linkedin.com/in/ahmad-kariem/)
 
 
 ## Acknowledgements
+
+- Matthew Lee - for authoring the [Reddit JSON API GitHub Page.](https://github.com/reddit-archive/reddit/wiki/JSON)
+- [ Gabriel Bigelow](https://github.com/Gabriel-Bigelow) - for consultations during the creation process, and for catching some bugs in the first release. [GitHub.](https://github.com/Gabriel-Bigelow) [LinkedIn.](https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADov51sBLoD_XwrP58ADD4kyif2ZdJLcNeo&keywords=gabriel%20bigelow&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=779b7332-abed-4124-ac64-10aac0b83c67&sid=71%3A)
+
 ## License
+
+[MIT](https://opensource.org/licenses/MIT)
+
+Copyright 2022 Ahmad Kariem
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
