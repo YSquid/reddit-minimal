@@ -71,7 +71,7 @@ Concepts tested include:
 
 **Posts**
 
-- Each post card displays the following information about the post:
+- Each Post card displays the following information about the post:
     - Current vote total (calculated as upvotes - downvotes)
     - Title
     - Post Author
@@ -108,17 +108,26 @@ Based on user actions, requests to different endpoints are sent via Javascripts 
 
 Data is stored in different slices of state which are ultimately sent to the top-level Redux store. This state management pattern is from [Redux Toolkit.](ttps://redux-toolkit.js.org)
 
-*Posts*
+**Fetching Posts**
 
-- On initial page load, a request is sent to `https://www.reddit.com/r/pics.json` and the returned object is parsed to JSON and used to populate the posts property in the `redditSlice` of state.
-- On clicking a subreddit, a new request is sent to `https://www.reddit.com/${selectedSubreddit}.json` where `${selectedSubreddit}` is the title of the subreddit clicked (i.e. /r/javascript). This new response objects data is then parsed and replaces the old data in the posts property of in redditSlice
+- On initial page load, a request is sent to `https://www.reddit.com/r/pics.json` and the returned object is parsed to JSON and used to populate the `posts` property in the `redditSlice` of state.
+- On clicking a subreddit, a new request is sent to `https://www.reddit.com/${selectedSubreddit}.json` where `${selectedSubreddit}` is the title of the subreddit clicked (i.e. /r/javascript). This new response objects data is then parsed and replaces the old data in the `posts` property in `redditSlice`.
 
-*Comments*
+**Fetching Comments**
 
  - Comments are loaded only when needed, on initial page load no comments are loaded for any of the posts
- - When a post cards comments button is clicked, a request is sent to  `https://www.reddit.com${permalink}/.json?limit=20` where `${permalink}` is a prop on the post component (passed to it when rendered by the posts component, which in turn gets it from the `redditSlice` of state)
- - Each comment comes with other data we do not need, so we extract
+ - When a `Post` cards comments button is clicked, a request is sent to  `https://www.reddit.com${permalink}/.json?limit=20` where `${permalink}` is a prop on the `post` component (passed to it when rendered by the `Posts` component, which in turn gets it from the `redditSlice` of state)
+ - Each comment comes with other data we do not need, so we extract the data we care about, and throw out the rest. This is why `limit=20` gives 5 comments - the resonse object has 3 keys we don't need per comment.
+ - The comment array is saved in local state within the `Post` component. This local state varibale is mapped to render the `Comments` component.
 
 ## Contribute
+
+If you would like to improve this project, you may submit [pull requests here.](https://github.com/YSquid/reddit-minimal/pulls).
+
+If you would like to connect with me re: this project you can reach me at:
+- Email: [ahmad.k@ysquid.tech](mailto:ahmad.k@ysquid.tech)
+- Linked: [Ahmad Kariem](https://www.linkedin.com/in/ahmad-kariem/)
+
+
 ## Acknowledgements
 ## License
