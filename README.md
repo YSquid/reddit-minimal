@@ -21,7 +21,7 @@ The live project can be **[viewed here.](https://ak-reddit-minimal.netlify.app/)
 7. [Contribute](#contribute)
 8. [Acknowledgements](#acknowledgements)
 9. [License](#license)
-<br>
+
 ---
 ## Purpose
 
