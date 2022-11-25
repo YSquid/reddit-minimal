@@ -93,7 +93,6 @@ function Post({
     // console.log(response)
     const raw = await response.json();
     const comments = raw[1].data.children;
-    console.log(comments);
     setComments(comments);
   };
 

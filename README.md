@@ -38,7 +38,7 @@ Concepts tested include:
 
 ## Technology Used
 
-Development:
+**Development:**
 
 - HTML5
 - CSS3
@@ -46,19 +46,79 @@ Development:
 - ReactJS
 - Redux
 
-Automated Testing:
+**Automated Testing:**
 - Jest
 - React Testing Library
 
-Version Control:
+**Version Control:**
 - Git
 
-Hosting & CI/CD:
+**Hosting & CI/CD:**
 - GitHub
 - Netflify
 
 ## Features
+
+**Feeds**
+
+- Loads to a default feed with 25 posts
+- Subreddit for default feed is r/pics
+- User is able to choose a new subreddit from "Subreddits" menu on right side of screen (large displays) or on top of feed (small displays)
+- When new subreddit is chosen, feed updates to 25 new posts from that subreddit
+- Posts in the feed can be filtered using the search bar in the header. 
+- Partial matching for search terms is possible - i.e. the search "new javascript" would match  both of these posts: "What are the new javascript ES6 features" and "10 things all new javascript developers should know"
+- Searches are case sensitive
+
+**Posts**
+
+- Each post card displays the following information about the post:
+    - Current vote total (calculated as upvotes - downvotes)
+    - Title
+    - Post Author
+    - Number of comments
+    - Time since post 
+        - in hours if less than 1 day 
+        - in days if less than 1 week 
+        - in weeks if less than 1 month
+        - in months if less than 1 year
+        - in years if more than 1 year
+
+<br>
+
+- Clicking the post title or preview image will open the posts permalink url in a new tab 
+    - for image type posts this will be full size image
+    - for discussion type posts, this will be the comments link in reddit
+
+- Clicking the comments icon (bottom right part of post card) will display the top 5 comments
+    - Only the comment itself will be displayed, not replies to the comment
+    - Comment author is displayed
+    - Time since comment displayed, using same formatting logic as posts
+
 ## App Architecture
+
+**Diagram**
+
+**Getting Data**
+
+This app uses the [Reddit JSON API](https://github.com/reddit-archive/reddit/wiki/JSON) in order to fetch data from Reddit.
+
+The Reddit JSON API is a simplied API which does not require OAuth, and only allows GET requests. As such no ability to send data to the reddit servers (i.e. upvotes, comments, sign ins etc) are available.
+
+Based on user actions, requests to different endpoints are sent via Javascripts [fetch API.](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+
+Data is stored in different slices of state which are ultimately sent to the top-level Redux store. This state management pattern is from [Redux Toolkit.](ttps://redux-toolkit.js.org)
+
+*Posts*
+
+- On initial page load, a request is sent to `https://www.reddit.com/r/pics.json` and the returned object is parsed to JSON and used to populate the posts property in the `redditSlice` of state.
+- On clicking a subreddit, a new request is sent to `https://www.reddit.com/${selectedSubreddit}.json` where `${selectedSubreddit}` is the title of the subreddit clicked (i.e. /r/javascript). This new response objects data is then parsed and replaces the old data in the posts property of in redditSlice
+
+*Comments*
+
+ - Comments are loaded only when needed, on initial page load no comments are loaded for any of the posts
+ - When a post cards comments button is clicked, a request is sent to  `https://www.reddit.com${permalink}/.json?limit=20` where `${permalink}` is a prop on the post component (passed to it when rendered by the posts component, which in turn gets it from the `redditSlice` of state)
+ - Each comment comes with other data we do not need, so we extract
+
 ## Contribute
 ## Acknowledgements
 ## License
