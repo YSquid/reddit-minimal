@@ -24,12 +24,12 @@ function Subreddits() {
     setActiveSubreddit(e.target.outerText);
   };
 
+
   return (
-    <div className="Subreddits" data-testid="Subreddits">
-      <h1>
-        Sub<span id="redditSpan">reddit</span>s
-      </h1>
-      <div className="subredditsContainer" data-testid="subredditsContainer">
+    
+    <div className='Subreddits'>
+      <h1>Sub<span id='redditSpan'>reddit</span>s</h1>
+      <div className='subredditsContainer'>
         {subreddits.map((subreddit, index) => {
           const { subredditTitle } = subreddit;
           return (

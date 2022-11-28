@@ -2,23 +2,32 @@
   display: flex;
   flex-direction: column;
   background-color: rgb(243, 243, 243);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #304553;
 }
 
 .App-Dark {
   display: flex;
   flex-direction: column;
-  background-color: --var(--semi-black);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #304553;
 }
 .Body {
   display: flex;
 }
 
+.Body-Dark {
+  display: flex;
+  background-color: var(--charcoal-grey);
+}
+
 @media only screen and (max-width: 800px) {
   .Body {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .Body-Dark {
     flex-direction: column-reverse;
     align-items: center;
   }
