@@ -44,7 +44,7 @@ function Header() {
   const theme = useSelector(selectTheme)
 
   return (
-    <div className={theme === 'light' ? 'Header' : 'Header-Dark'}>
+    <div className={theme === 'light' ? 'Header' : 'Header-Dark'} data-testid="Header__Header">
       <button className="toggleTheme" onClick={toggleTheme}>ToggleTheme</button>
       <h1 id="mainLogo">
         {

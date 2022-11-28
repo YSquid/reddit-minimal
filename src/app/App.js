@@ -10,11 +10,11 @@ function App() {
 
   const theme = useSelector(selectTheme)
   return (
-    <div className={theme === 'light' ? 'App' : 'App-Dark'}>
-      <div className="Header">
+    <div className={theme === 'light' ? 'App' : 'App-Dark'} data-testid="App__App">
+      <div className="Header" data-testid="Header__App">
         <Header />
       </div>
-      <div className={theme === 'light' ? 'Body' : 'Body-Dark'}>
+      <div className={theme === 'light' ? 'Body' : 'Body-Dark'} data-testid="Body__App">
         <Posts />
         <Subreddits />
       </div>
