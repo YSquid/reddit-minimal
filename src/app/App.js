@@ -10,7 +10,7 @@ function App() {
 
   const theme = useSelector(selectTheme)
   return (
-    <div className="App">
+    <div className={theme === 'light' ? 'App' : 'App-Dark'}>
       <div className="Header">
         <Header />
       </div>

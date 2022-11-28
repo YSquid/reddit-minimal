@@ -12,3 +12,11 @@
     filter: drop-shadow(-0.2rem -0.2rem 1rem rgb(220,220,220));
     filter: drop-shadow(0.2rem 0.2rem 1rem rgb(220,220,220));
 }
+
+.Posts-Dark {
+    grid-area: posts;
+    margin: 1rem;
+    background-color: rbg(220,220,220);
+    filter: drop-shadow(-0.2rem -0.2rem 1rem rgb(220,220,220));
+    filter: drop-shadow(0.2rem 0.2rem 1rem rgb(220,220,220));
+}
