@@ -6,6 +6,7 @@ import { GoComment } from "react-icons/go";
 import { FaRedditSquare } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { selectSelectedSubreddit } from "../posts/redditSlice";
+import {selectTheme} from '../posts/redditSlice'
 
 function Post({
   title,
@@ -27,6 +28,7 @@ function Post({
   const [activeVote, setActiveVote] = useState("#");
 
   const selectedSubreddit = useSelector(selectSelectedSubreddit);
+  const theme = useSelector(selectTheme)
 
   useEffect(() => {
     setComments([])
@@ -97,7 +99,7 @@ function Post({
   };
 
   return (
-    <div className="Post">
+    <div className={theme === "light" ? "Post" :"Post-Dark"}>
       <div className="Votes">
         <button onClick={handleUp} aria-label="upvote button">
           <BiUpvote
