@@ -3,6 +3,7 @@ import "./Posts.css";
 import Post from "../post/Post";
 import { useDispatch, useSelector } from "react-redux";
 import postedAgo from '../utils/postedAgo'
+
 import {
   addPost,
   selectPosts,
