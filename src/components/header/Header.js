@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./Header.css";
 import { FcReddit } from "react-icons/fc";
 import { HiOutlineSearch } from "react-icons/hi";
-import { setSearchTerm, filterPosts } from "../posts/redditSlice";
-import { useDispatch } from "react-redux";
+import { setSearchTerm, filterPosts, selectTheme, updateTheme } from "../posts/redditSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 function Header() {
   //local state stores the search term - will be dispatched to store on submit
@@ -33,8 +33,19 @@ function Header() {
     }
   };
 
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      dispatch(updateTheme('dark'))
+    } else {
+      dispatch(updateTheme('light'))
+    }
+  }
+
+  const theme = useSelector(selectTheme)
+
   return (
-    <div className="Header" data-testid="Header__Header">
+    <div className='Header' data-testid="App__App">
+      <button className="toggleTheme" onClick={toggleTheme}>ToggleTheme</button>
       <h1 id="mainLogo">
         <FcReddit id="redditLogo" />
         <p>

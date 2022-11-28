@@ -7,6 +7,7 @@ const initialState = {
   errorLoading: false,
   searchTerm: "",
   selectedSubreddit: "r/pics",
+  theme: "light",
 };
 
 export const redditSlice = createSlice({
@@ -15,8 +16,19 @@ export const redditSlice = createSlice({
   reducers: {
     addPost: {
       reducer: (state, action) => {
-        const { id, name, title, thumbnail, url, ups, downs, created_utc, permalink, author, num_comments } =
-          action.payload;
+        const {
+          id,
+          name,
+          title,
+          thumbnail,
+          url,
+          ups,
+          downs,
+          created_utc,
+          permalink,
+          author,
+          num_comments,
+        } = action.payload;
         state.posts.push({
           id: id,
           name: name,
@@ -29,7 +41,7 @@ export const redditSlice = createSlice({
           downs: downs,
           created_utc: created_utc,
           num_comments: num_comments,
-          comments: []
+          comments: [],
         });
       },
     },
@@ -42,11 +54,11 @@ export const redditSlice = createSlice({
     },
     filterPosts: {
       reducer: (state, action) => {
-        const filteredPosts = state.posts.filter((post) =>{
-          return post.title.includes(action.payload)
-        })
-        state.filteredPosts = filteredPosts
-      }
+        const filteredPosts = state.posts.filter((post) => {
+          return post.title.includes(action.payload);
+        });
+        state.filteredPosts = filteredPosts;
+      },
     },
     setSearchTerm: {
       reducer: (state, action) => {
@@ -58,19 +70,32 @@ export const redditSlice = createSlice({
         state.selectedSubreddit = action.payload;
       },
     },
+    updateTheme: {
+      reducer: (state, action) => {
+        state.theme = action.payload;
+      },
+    },
   },
 });
 
-export const { addPost, clearPosts, setSearchTerm, filterPosts, updateSelectedSubreddit } =
-  redditSlice.actions; //addPost action
+export const {
+  addPost,
+  clearPosts,
+  setSearchTerm,
+  filterPosts,
+  updateSelectedSubreddit,
+  updateTheme,
+} = redditSlice.actions; //actions
 
 //selectors for each prop in redditSlice
 export const selectPosts = (state) => state.reddit.posts;
-export const selectFilteredPosts = (state) => state.reddit.filteredPosts
+export const selectFilteredPosts = (state) => state.reddit.filteredPosts;
 export const selectIsLoading = (state) => state.reddit.isLoading;
 export const selectErrorLoading = (state) => state.reddit.errorLoading;
 export const selectSearchTerm = (state) => state.reddit.searchTerm;
 export const selectSelectedSubreddit = (state) =>
   state.reddit.selectedSubreddit;
+
+export const selectTheme = (state) => state.reddit.theme;
 
 export default redditSlice.reducer; //default export is the reducer for the slice
