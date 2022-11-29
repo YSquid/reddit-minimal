@@ -50,29 +50,87 @@
   padding: 0.15rem;
 }
 
-.upVote:hover {
+/*Up vote button variations*/
+
+.upVote-light {
+  color: var(--semi-black)
+}
+
+.upVoteActive-light {
+  color: var(--upvote);
+}
+
+.upVote-light:hover {
   color: var(--upvote);
   cursor: pointer;
 }
 
-.upVoteActive {
-  color: var(--upvote);
+.upVote-dark {
+  color: white;
 }
 
-.downVote:hover {
+.upVoteActive-dark {
+  color: var(--upvote)
+}
+
+.upVote-dark:hover {
+  color: var(--upvote);
+  cursor: pointer;
+}
+
+/*Down vote button variations*/
+.downVote-light {
+  color: var(--semi-black)
+}
+
+.downVoteActive-light {
+  color: var(--downvote);
+}
+
+.downVote-light:hover {
   color: var(--downvote);
   cursor: pointer;
 }
-.downVoteActive {
+
+.downVote-dark {
+  color: white;
+}
+
+.downVoteActive-dark {
   color: var(--downvote);
 }
+
+.downVote-dark:hover {
+  color: var(--downvote);
+  cursor: pointer;
+}
+
+
+
+/*Voted on color variations*/
 
 .votedUp {
     color: var(--upvote)
 }
 
+.votedUp-Dark {
+  color: var(--upvote)
+}
+
 .votedDown {
     color: var(--downvote)
+}
+
+.votedDown-Dark {
+  color: var(--downvote)
+}
+
+.notVoted {
+  color: var(--semi-black)
+}
+
+.notVoted-Dark {
+  color: white;
 }
 
 /*Post Body Styles*/

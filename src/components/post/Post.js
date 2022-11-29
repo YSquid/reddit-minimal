@@ -6,7 +6,7 @@ import { GoComment } from "react-icons/go";
 import { FaRedditSquare } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { selectSelectedSubreddit } from "../posts/redditSlice";
-import {selectTheme} from '../posts/redditSlice'
+import { selectTheme } from "../posts/redditSlice";
 
 function Post({
   title,
@@ -28,11 +28,11 @@ function Post({
   const [activeVote, setActiveVote] = useState("#");
 
   const selectedSubreddit = useSelector(selectSelectedSubreddit);
-  const theme = useSelector(selectTheme)
+  const theme = useSelector(selectTheme);
 
   useEffect(() => {
-    setComments([])
-  }, [selectedSubreddit])
+    setComments([]);
+  }, [selectedSubreddit]);
 
   //handle upvote (local state)
   //first part of function tracks if up is active for vote tallying purposes
@@ -99,34 +99,40 @@ function Post({
   };
 
   return (
-    <div className={theme === "light" ? "Post" :"Post-Dark"}>
+    <div className={theme === "light" ? "Post" : "Post-Dark"}>
       <div className="Votes">
         <button onClick={handleUp} aria-label="upvote button">
           <BiUpvote
-            className={activeVote === "#up" ? "upVoteActive" : "upVote"}
+            className={activeVote === "#up" ? `upVoteActive-${theme}` : `upVote-${theme}`}
           />
         </button>
         <p
           className={
-            activeVote === "#up"
-              ? "votedUp"
-              : activeVote === "#down"
-              ? "votedDown"
-              : "notVoted"
+            activeVote === "#up" && theme === 'light'
+              ? "votedUp" :
+              activeVote === "#up" && theme === 'dark' 
+              ? "votedUp-Dark": 
+              activeVote === "#down" && theme === 'light' 
+              ? "votedDown":  
+              activeVote === "#down" && theme === 'dark' 
+              ? "votedDown-Dark":
+              activeVote === '#' && theme === 'dark'
+              ? 'notVoted-Dark' :
+              'notVoted'
           }
         >
           {formattedVotes(votes)}
         </p>
         <button onClick={handleDown} aria-label="downvote button">
           <BiDownvote
-            className={activeVote === "#down" ? "downVoteActive" : "downVote"}
+            className={activeVote === "#down" ? `downVoteActive-${theme}` : `downVote-${theme}`}
           />
         </button>
       </div>
       <div className="postBody">
         <div className="postTitle">
           <a href={url} target="_blank" rel="noreferrer">
-            <p data-testid='postTitle_pTag'>{title}</p>
+            <p data-testid="postTitle_pTag">{title}</p>
           </a>
         </div>
         <div className="postPreview">
