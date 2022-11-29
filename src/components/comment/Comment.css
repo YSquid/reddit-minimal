@@ -1,11 +1,21 @@
-.Comment {
+.Comment-light {
   margin: 0.5rem auto;
   background-color: var(--custom-grey);
   border-radius: 0.5rem;
 }
 
-.Comment:hover {
+.Comment-dark {
+  margin: 0.5rem auto;
+  border-radius: 0.5rem;
+  background-color: var(--semi-black);
+}
+
+.Comment-light:hover {
     filter: drop-shadow(0.3rem 0.3rem 1rem var(--semi-black));
+}
+
+.Comment-dark:hover {
+  filter: drop-shadow(0.1rem 0.1rem 0.1rem white);
 }
 
 .commentAuthor {
@@ -13,11 +23,22 @@
   padding: 0.5rem 1rem;
 }
 
-.commentBody {
+.commentBody-light {
   padding: 0.5rem 1rem;
   overflow-wrap: break-word;
 }
 
-.commentPostedAgo {
+.commentBody-dark {
   padding: 0.5rem 1rem;
+  overflow-wrap: break-word;
+  color: white;
+}
+
+.commentPostedAgo-light {
+  padding: 0.5rem 1rem;
+}
+
+.commentPostedAgo-dark {
+  padding: 0.5rem 1rem;
+  color: white;
 }

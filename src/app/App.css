@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   font-family: "Poppins", sans-serif;
-  color: #304553;
+  color: var(--semi-black);
 }
 .Body {
   display: flex;
@@ -19,7 +19,7 @@
 
 .Body-Dark {
   display: flex;
-  background-color: var(--charcoal-grey);
+  background-color: var(--semi-black);
 }
 
 @media only screen and (max-width: 800px) {
