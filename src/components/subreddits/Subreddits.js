@@ -4,12 +4,14 @@ import "./Subreddits.css";
 import { useSelector, useDispatch } from "react-redux";
 import { selectSubreddits } from "./subredditsSlice";
 import { updateSelectedSubreddit, setSearchTerm } from "../posts/redditSlice";
+import {selectTheme} from '../posts/redditSlice';
 
 function Subreddits() {
   //variable which tracks which subreddit div is the active one for stlying
   const [activeSubreddit, setActiveSubreddit] = useState("");
 
   const subreddits = useSelector(selectSubreddits);
+  const theme = useSelector(selectTheme)
   const dispatch = useDispatch();
 
   //this functiond does 3 things
@@ -27,7 +29,7 @@ function Subreddits() {
 
   return (
     
-    <div className='Subreddits' data-testid="Subreddits">
+    <div className={`Subreddits-${theme}`} data-testid="Subreddits">
       <h1>Sub<span id='redditSpan'>reddit</span>s</h1>
       <div className='subredditsContainer' data-testid="subredditsContainer">
         {subreddits.map((subreddit, index) => {
@@ -37,8 +39,8 @@ function Subreddits() {
             <div
               className={
                 activeSubreddit === `r/${subredditTitle}`
-                  ? "subredditActive"
-                  : "subreddit"
+                  ? `subredditActive-${theme}`
+                  : `subreddit-${theme}`
               }
               key={index}
               data-testid={`r/${subredditTitle}`}
