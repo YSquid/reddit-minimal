@@ -99,7 +99,7 @@ function Post({
   };
 
   return (
-    <div className={theme === "light" ? "Post" : "Post-Dark"}>
+    <div className={theme === "light" ? "Post" : "Post-dark"}>
       <div className="Votes">
         <button onClick={handleUp} aria-label="upvote button">
           <BiUpvote
@@ -111,13 +111,13 @@ function Post({
             activeVote === "#up" && theme === 'light'
               ? "votedUp" :
               activeVote === "#up" && theme === 'dark' 
-              ? "votedUp-Dark": 
+              ? "votedUp-dark": 
               activeVote === "#down" && theme === 'light' 
               ? "votedDown":  
               activeVote === "#down" && theme === 'dark' 
-              ? "votedDown-Dark":
+              ? "votedDown-dark":
               activeVote === '#' && theme === 'dark'
-              ? 'notVoted-Dark' :
+              ? 'notVoted-dark' :
               'notVoted'
           }
         >

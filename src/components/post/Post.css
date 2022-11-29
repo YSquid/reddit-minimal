@@ -11,10 +11,10 @@
 }
 
 .Post:hover {
-    outline: 1px solid var(--semi-black)
+  outline: 1px solid var(--semi-black);
 }
 
-.Post-Dark {
+.Post-dark {
   display: grid;
   grid-template-columns: 1fr 10fr;
   grid-template-areas: "votes body";
@@ -53,7 +53,7 @@
 /*Up vote button variations*/
 
 .upVote-light {
-  color: var(--semi-black)
+  color: var(--semi-black);
 }
 
 .upVoteActive-light {
@@ -70,7 +70,7 @@
 }
 
 .upVoteActive-dark {
-  color: var(--upvote)
+  color: var(--upvote);
 }
 
 .upVote-dark:hover {
@@ -80,7 +80,7 @@
 
 /*Down vote button variations*/
 .downVote-light {
-  color: var(--semi-black)
+  color: var(--semi-black);
 }
 
 .downVoteActive-light {
@@ -105,31 +105,29 @@
   cursor: pointer;
 }
 
-
-
 /*Voted on color variations*/
 
 .votedUp {
-    color: var(--upvote)
+  color: var(--upvote);
 }
 
-.votedUp-Dark {
-  color: var(--upvote)
+.votedUp-dark {
+  color: var(--upvote);
 }
 
 .votedDown {
-    color: var(--downvote)
+  color: var(--downvote);
 }
 
-.votedDown-Dark {
-  color: var(--downvote)
+.votedDown-dark {
+  color: var(--downvote);
 }
 
 .notVoted {
-  color: var(--semi-black)
+  color: var(--semi-black);
 }
 
-.notVoted-Dark {
+.notVoted-dark {
   color: white;
 }
 
@@ -178,20 +176,16 @@
   background-color: black;
   max-width: 70%;
   height: 100%;
-
 }
 
 .previewPlaceholder {
-    font-size: 4rem;
-    color: var(--reddit-blue)
+  font-size: 4rem;
+  color: var(--reddit-blue);
 }
 
 .previewPlaceholder:hover {
-    color: var(--reddit-orange)
+  color: var(--reddit-orange);
 }
-
-
-
 
 /*Post footer Styles*/
 .postFooter {
@@ -221,21 +215,21 @@
 }
 
 @media only screen and (max-width: 500px) {
-    .Post {
-        overflow: scroll;
-    }
+  .Post {
+    overflow: scroll;
+  }
 
-    .postTitle {
-        font-size: 1.2rem;
-    }
+  .postTitle {
+    font-size: 1.2rem;
+  }
 
-    .postFooter {
-        font-size: 0.8rem;
-    }
+  .postFooter {
+    font-size: 0.8rem;
+  }
 
-    .commentsToggle {
-        font-size: 0.9rem;
-    }
+  .commentsToggle {
+    font-size: 0.9rem;
+  }
 }
 
 @media only screen and (max-width: 400px) {
