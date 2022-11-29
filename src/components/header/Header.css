@@ -17,6 +17,27 @@
   color: white;
 }
 
+.toggleTheme-light {
+  background-color: transparent;
+  margin-right: 1rem;
+  font-size: 1.7rem;
+}
+
+.toggleTheme-light:hover {
+  color: var(--reddit-orange)
+}
+
+.toggleTheme-dark {
+  background-color: transparent;
+  color: white;
+  margin-right: 1rem;
+  font-size: 1.7rem;
+}
+
+.toggleTheme-dark:hover {
+  color: var(--reddit-orange)
+}
+
 #mainLogo {
   padding: 0.25rem 0;
   margin-right: 1rem;
