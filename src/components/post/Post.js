@@ -129,8 +129,8 @@ function Post({
           />
         </button>
       </div>
-      <div className="postBody">
-        <div className="postTitle">
+      <div className={`postBody-${theme}`}>
+        <div className={`postTitle-${theme}`}>
           <a href={url} target="_blank" rel="noreferrer">
             <p data-testid="postTitle_pTag">{title}</p>
           </a>
@@ -150,11 +150,11 @@ function Post({
             )}
           </a>
         </div>
-        <div className="postFooter">
+        <div className={`postFooter-${theme}`}>
           <p id="postAuthor">{author}</p>
           <p>{postedAgo(created_utc)}</p>
           <div className="commentsWidget">
-            <button className="commentsToggle" onClick={toggleComments}>
+            <button className={`commentsToggle-${theme}`} onClick={toggleComments}>
               <GoComment />
               <p>&nbsp; {num_comments}</p>
             </button>

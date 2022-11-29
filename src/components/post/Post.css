@@ -7,7 +7,6 @@
   filter: drop-shadow(-0.2rem -0.2rem 1rem rgb(220, 220, 220));
   filter: drop-shadow(0.2rem 0.2rem 1rem rgb(220, 220, 220));
   margin-bottom: 1rem;
-  border-radius: 0.5rem;
 }
 
 .Post:hover {
@@ -20,7 +19,6 @@
   grid-template-areas: "votes body";
   background-color: rgb(0, 0, 0);
   margin-bottom: 1rem;
-  border-radius: 0.5rem;
 }
 
 /*Votes Styles*/
@@ -132,7 +130,7 @@
 }
 
 /*Post Body Styles*/
-.postBody {
+.postBody-light {
   grid-area: body;
   background-color: rgb(255, 255, 255);
   padding: 1rem;
@@ -141,25 +139,58 @@
   min-width: 0;
 }
 
-.postTitle {
+.postBody-dark {
+  grid-area: body;
+  background-color: rgb(0,0,0);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+/*Post titles light*/
+
+.postTitle-light {
   font-size: 1.5rem;
   height: auto;
   margin-bottom: 1rem;
 }
 
-.postTitle > a {
+.postTitle-light > a {
   text-decoration: none;
 }
 
-.postTitle > a:link {
+.postTitle-light > a:link {
   color: var(--semi-black);
 }
 
-.postTitle > a:visited {
+.postTitle-light > a:visited {
   color: var(--reddit-purple);
 }
 
-.postTitle > a:hover {
+.postTitle-light > a:hover {
+  color: var(--reddit-orange);
+}
+/*Post titles dark*/
+
+.postTitle-dark {
+  font-size: 1.5rem;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.postTitle-dark > a {
+  text-decoration: none;
+}
+
+.postTitle-dark > a:link {
+  color: white;
+}
+
+.postTitle-dark > a:visited {
+  color: var(--reddit-purple);
+}
+
+.postTitle-dark > a:hover {
   color: var(--reddit-orange);
 }
 
@@ -188,7 +219,7 @@
 }
 
 /*Post footer Styles*/
-.postFooter {
+.postFooter-light {
   display: flex;
   font-size: 1.1rem;
   justify-content: space-between;
@@ -197,6 +228,18 @@
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   max-width: 100%;
+}
+
+.postFooter-dark {
+  display: flex;
+  font-size: 1.1rem;
+  justify-content: space-between;
+  padding: 0.5rem 0 0 1.25rem;
+  border-top: 2px solid rgb(243, 243, 243);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  max-width: 100%;
+  color: white
 }
 
 #postAuthor {
@@ -209,7 +252,26 @@
   background-color: transparent;
 }
 
-.commentsToggle:hover {
+.commentsToggle-light {
+  display: flex;
+  font-size: 1.1rem;
+  background-color: transparent;
+}
+
+.commentsToggle-dark {
+  display: flex;
+  font-size: 1.1rem;
+  background-color: transparent;
+  color: white;
+}
+
+
+.commentsToggle-light:hover {
+  color: var(--reddit-orange);
+  cursor: pointer;
+}
+
+.commentsToggle-dark:hover {
   color: var(--reddit-orange);
   cursor: pointer;
 }
