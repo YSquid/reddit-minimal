@@ -20,7 +20,7 @@ function Header() {
   //These filtered posts have their own peice of state in the redditSlice
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    dispatch(filterPosts(localSearchTerm));
+    dispatch(filterPosts(localSearchTerm.toLowerCase()));
     dispatch(setSearchTerm(localSearchTerm));
   };
 

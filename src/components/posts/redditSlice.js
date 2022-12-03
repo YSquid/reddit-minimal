@@ -55,7 +55,7 @@ export const redditSlice = createSlice({
     filterPosts: {
       reducer: (state, action) => {
         const filteredPosts = state.posts.filter((post) => {
-          return post.title.includes(action.payload);
+          return post.title.toLowerCase().includes(action.payload);
         });
         state.filteredPosts = filteredPosts;
       },
