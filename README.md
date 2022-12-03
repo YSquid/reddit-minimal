@@ -67,10 +67,10 @@ Concepts tested include:
 
 **Feeds**
 
-- Loads to a default feed with 25 posts
+- Loads to a default feed with 15 posts
 - Subreddit for default feed is r/pics
 - User is able to choose a new subreddit from "Subreddits" menu on right side of screen (large displays) or on top of feed (small displays)
-- When new subreddit is chosen, feed updates to 25 new posts from that subreddit
+- When new subreddit is chosen, feed updates to 15 new posts from that subreddit
 - Posts in the feed can be filtered using the search bar in the header
 - Partial matching for search terms is possible - i.e. the search "new javascript" would match  both of these posts: "What are the new javascript ES6 features" and "10 things all new javascript developers should know"
 - Searches are case in-sensitive i.e. new javascript would match both of "New javascript features" and "new javascript features"
@@ -124,7 +124,7 @@ Data is stored in different slices of state which are ultimately sent to the top
 
 **Fetching Posts**
 
-- On initial page load, a request is sent to `https://www.reddit.com/r/pics.json` and the returned object is parsed to JSON and used to populate the `posts` property in the `redditSlice` of state.
+- On initial page load, a request is sent to `https://www.reddit.com/r/pics.json?limit=15` and the returned object is parsed to JSON and used to populate the `posts` property in the `redditSlice` of state.
 - On clicking a subreddit, a new request is sent to `https://www.reddit.com/${selectedSubreddit}.json` where `${selectedSubreddit}` is the title of the subreddit clicked (e.g. /r/javascript). This new response objects data is then parsed and replaces the old data in the `posts` property in `redditSlice`.
 
 **Fetching Comments**
@@ -154,7 +154,7 @@ Data is stored in different slices of state which are ultimately sent to the top
     - Surface Pro 7
     - Surface Duo
     - Pixel 5
-- Lighthouse Test Scores as of November 25, 2022:
+- Lighthouse Test Scores as of December 03, 2022:
     - Desktop:
         - Performance: 80
         - Accessibility: 98
