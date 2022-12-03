@@ -73,7 +73,7 @@ Concepts tested include:
 - When new subreddit is chosen, feed updates to 25 new posts from that subreddit
 - Posts in the feed can be filtered using the search bar in the header
 - Partial matching for search terms is possible - i.e. the search "new javascript" would match  both of these posts: "What are the new javascript ES6 features" and "10 things all new javascript developers should know"
-- Searches are case sensitive
+- Searches are case in-sensitive i.e. new javascript would match both of "New javascript features" and "new javascript features"
 
 **Posts**
 
@@ -174,8 +174,8 @@ These ideas are meant as reasonable extensions of the project without having to 
 - Adding functionality to load more posts by scrolling to end of page
 - Adding functionality to load more comments by clicking a 'more comments' button
 - Generating subreddits list dynamically based on most popular
-- Making search filtering of posts case insensitive
-- Adding day/night mode theme toggle
+- *Making search filtering of posts case insensitive* **added 12/03/2022 by Ahmad Kariem**
+- *Adding day/night mode theme toggle* **added 12/03/2022 by Ahmad Kariem**
 - Adding more unit tests
 - Adding integration testing
 

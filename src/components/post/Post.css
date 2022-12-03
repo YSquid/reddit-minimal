@@ -245,6 +245,7 @@
 #postAuthor {
   color: var(--reddit-orange);
   max-width: 30%;
+  word-wrap: break-word;
 }
 
 .commentsToggle {
