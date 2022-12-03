@@ -29,7 +29,7 @@ function Posts() {
   //use similar logic for getting posts that match search
   useEffect(() => {
     const getPosts = async () => {
-      const endpoint = `https://www.reddit.com/${selectedSubreddit}.json`;
+      const endpoint = `https://www.reddit.com/${selectedSubreddit}.json?limit=15`;
       const response = await fetch(endpoint);
       const raw = await response.json();
       const postsFull = raw.data.children;
