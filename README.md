@@ -186,7 +186,7 @@ These ideas are meant as reasonable extensions of the project without having to 
 If you would like to improve this project, you may submit [a pull request here.](https://github.com/YSquid/reddit-minimal/pulls)
 
 If you would like to connect with me you can reach me at:
-- Email: [ahmad.k@ysquid.tech](mailto:ahmad.k@ysquid.tech)
+- Email: [contact@ahmadkariem.com](mailto:contact@ahmadkariem.com)
 - LinkedIn: [Ahmad Kariem](https://www.linkedin.com/in/ahmad-kariem/)
 
 ---
