@@ -1,0 +1,23 @@
+name: Auto Update In Progress Time
+
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  updateInProgressTime:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if the issue was labeled with "in progress"
+        if: github.event.label.name == 'in progress'
+        run: |
+          echo "Issue is in progress"
+          # You can add more actions here if needed.
+
+      - name: Set In Progress Time
+        if: github.event.label.name == 'in progress'
+        run: |
+          timestamp=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          echo "In Progress Time: $timestamp"
+          # You can use GitHub API to update the "In progress time" field of the issue with the $timestamp value.
