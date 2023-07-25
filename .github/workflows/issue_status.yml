@@ -17,6 +17,12 @@ jobs:
       - name: Set In Progress Time
         if: github.event.label.name == 'In Progress'
         run: |
-          timestamp=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          token=${{ secrets.GH_TOKEN }}
           echo "In Progress Time: $timestamp"
-          # You can use GitHub API to update the "In progress time" field of the issue with the $timestamp value.
+          issue_number=$(jq --raw-output .issue.number "$GITHUB_EVENT_PATH")
+          timestamp=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          
+          curl -X POST "https://api.github.com/repos/reddit-minimal/issues/${issue_number}" \
+            -H "Authorization: Bearer ${token}" \
+            -H "Content-Type: application/json" \
+            --data "{\"fields\": {\"In progress time\": \"${timestamp}\"}}"
