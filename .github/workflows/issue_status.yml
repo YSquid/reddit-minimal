@@ -25,4 +25,4 @@ jobs:
           curl -X POST "https://api.github.com/repos/reddit-minimal/issues/${issue_number}" \
             -H "Authorization: Bearer ${token}" \
             -H "Content-Type: application/json" \
-            --data "{\"fields\": {\"In Progress Time\": \"${timestamp}\"}}"
+            --data "{\"fields\": {\"progress\": \"${timestamp}\"}}"
