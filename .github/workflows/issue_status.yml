@@ -8,14 +8,14 @@ jobs:
   updateInProgressTime:
     runs-on: ubuntu-latest
     steps:
-      - name: Check if the issue was labeled with "In Progress"
-        if: github.event.label.name == 'In Progress'
+      - name: Check if the issue status is "In Progress"
+        if: github.event.status.name == 'In Progress'
         run: |
           echo "Issue is in progress"
           # You can add more actions here if needed.
 
       - name: Set In Progress Time
-        if: github.event.label.name == 'In Progress'
+        if: github.event.status.name == 'In Progress'
         run: |
           token=${{ secrets.GH_TOKEN }}
           echo "In Progress Time: $timestamp"
