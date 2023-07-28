@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Check if the issue status was changed to "In Progress"
         if: >
-           github.event.changes
+           github.issues.changes
        
         run: |
         
