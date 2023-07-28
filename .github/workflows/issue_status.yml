@@ -12,7 +12,7 @@ jobs:
         if: >
            github.event.changes
            && github.event.changes.status
-          && github.event.changes.status.from != 'In Progress'
+           && github.event.changes.status.from != 'In Progress'
            && github.event.issue.status == 'in progress'
         run: |
           token=${{ secrets.GH_TOKEN }}
