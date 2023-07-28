@@ -11,16 +11,8 @@ jobs:
       - name: Check if the issue status was changed to "In Progress"
         if: >
            github.event.changes
-           && github.event.changes.status
-           && github.event.changes.status.from != 'In Progress'
-           && github.event.issue.status == 'In Progress'
+       
         run: |
-          token=${{ secrets.GH_TOKEN }}
+        
           echo "In Progress Time: $timestamp"
-          issue_number=$(jq --raw-output .issue.number "$GITHUB_EVENT_PATH")
-          timestamp=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-          
-          curl -X POST "https://api.github.com/repos/reddit-minimal/issues/${issue_number}" \
-            -H "Authorization: Bearer ${token}" \
-            -H "Content-Type: application/json" \
-            --data "{\"fields\": {\"progress\": \"${timestamp}\"}}"
+
