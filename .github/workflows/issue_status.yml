@@ -2,17 +2,31 @@ name: Auto Update In Progress Time
 
 on:
   issues:
-
+    types: edited
 
 jobs:
   updateInProgressTime:
     runs-on: ubuntu-latest
     steps:
-      - name: Check if the issue status was changed to "In Progress"
-        if: >
-           github.issues.changes
-       
+      - name: Check event payload
         run: |
-        
-          echo "In Progress Time: $timestamp"
+          echo "Event payload:"
+          cat $GITHUB_EVENT_PATH
 
+      - name: Check if the issue status was changed to "in progress"
+        if: >
+          github.event.changes
+          && github.event.changes.status
+          && github.event.changes.status.from != 'In Progress'
+          && github.event.issue.status == 'in progress'
+        run: |
+          echo "Issue status was changed to 'in progress'"
+          token=${{ secrets.GH_TOKEN }}
+          issue_number=$(jq --raw-output .issue.number "$GITHUB_EVENT_PATH")
+          timestamp=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+
+          # Update the issue using GitHub API
+          curl -X POST "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${issue_number}" \
+            -H "Authorization: Bearer ${token}" \
+            -H "Content-Type: application/json" \
+            --data "{\"fields\": {\"In progress time\": \"${timestamp}\"}}"
