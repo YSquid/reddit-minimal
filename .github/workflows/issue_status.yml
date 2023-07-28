@@ -13,7 +13,7 @@ jobs:
            github.event.changes
            && github.event.changes.status
            && github.event.changes.status.from != 'In Progress'
-           && github.event.issue.status == 'in progress'
+           && github.event.issue.status == 'In Progress'
         run: |
           token=${{ secrets.GH_TOKEN }}
           echo "In Progress Time: $timestamp"
