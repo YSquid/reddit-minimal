@@ -11,7 +11,9 @@ jobs:
       - name: Check if the issue status was changed to "In Progress"
         if: >
            github.event.changes
-           && github.event.issue.status == 'In Progress'
+           && github.event.changes.status
+          && github.event.changes.status.from != 'In Progress'
+           && github.event.issue.status == 'in progress'
         run: |
           token=${{ secrets.GH_TOKEN }}
           echo "In Progress Time: $timestamp"
