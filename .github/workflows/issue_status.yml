@@ -3,7 +3,8 @@ name: Comment on "In Progress" Issue
 on:
   issues:
     types:
-      - edited
+      - labeled
+      - unlabeled
 
 jobs:
   comment-on-inprogress:
