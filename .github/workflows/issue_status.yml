@@ -2,6 +2,8 @@ name: Comment on "In Progress" Issue
 
 on:
   issues:
+    types:
+      - edited
 
 jobs:
   comment-on-inprogress:
