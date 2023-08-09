@@ -3,8 +3,7 @@ name: Comment on "In Progress" Issue
 on:
   issues:
     types:
-      - labeled
-      - unlabeled
+      - edited
 
 jobs:
   comment-on-inprogress:
@@ -18,9 +17,9 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const issue = context.payload.issue;
-            const issueStatus = issue.labels.map(label => label.name);
+            const labels = issue.labels.map(label => label.name);
             
-            if (issueStatus.includes('In Progress')) {
+            if (labels.includes('In Progress')) {
               core.setOutput('status', 'in_progress');
             } else {
               core.setOutput('status', 'not_in_progress');
