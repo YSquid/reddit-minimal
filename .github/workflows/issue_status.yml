@@ -24,7 +24,7 @@ jobs:
             }
       
       - name: Add comment if issue is "In Progress"
-        if: steps.check_status.outputs.status == 'in_progress'
+        if: steps.check_status.outputs.status == 'not_in_progress'
         uses: actions/github-script@v5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
