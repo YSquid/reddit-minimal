@@ -15,9 +15,9 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const issue = context.payload.issue;
-            const status = issue.status.map(status => status.name);
+            const status = issue.status
             
-            if (status.includes('In Progress')) {
+            if (status == 'In Progress') {
               core.setOutput('status', 'in_progress');
             } else {
               core.setOutput('status', 'not_in_progress');
