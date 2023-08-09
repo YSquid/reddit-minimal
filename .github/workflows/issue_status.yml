@@ -2,6 +2,7 @@ name: Auto Update In Progress Time
 
 on:
   issues:
+    types: edited
   
 
 jobs:
