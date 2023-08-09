@@ -3,7 +3,7 @@ name: Comment on "In Progress" Issue
 on:
   issues:
     types:
-      - updated
+      - edited
 
 jobs:
   comment-on-inprogress:
