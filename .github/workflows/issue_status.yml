@@ -1,43 +1,37 @@
-name: Comment on "In Progress" Issue
+name: Comment on Status Update
 
 on:
-  issues:
-    types:
-      - edited
+  push:
+    branches:
+      - main   # Change to your default branch if it's different
+  workflow_dispatch:
+    inputs:
+      status:
+        description: 'Custom status'
+        required: false
 
 jobs:
-  comment-on-inprogress:
+  comment-on-status-update:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Log Event Payload
-        run: echo "${{ toJson(github.event) }}"
-      
-      - name: Check for "In Progress" status
+      - name: Check for status change
         id: check_status
+        run: |
+          if [ -n "${{ github.event.inputs.status }}" ]; then
+            echo "Status has been updated to ${{ github.event.inputs.status }}"
+            echo "status=${{ github.event.inputs.status }}" >> $GITHUB_ENV
+          else
+            echo "Status not provided or not updated"
+            echo "status=not_updated" >> $GITHUB_ENV
+          fi
+          
+      - name: Add comment if status is updated to "In Progress"
+        if: env.status == 'In Progress'
         uses: actions/github-script@v5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            console.log("Checking issue status...");
-            const issue = context.payload.issue;
-            const labels = issue.labels.map(label => label.name);
-            
-            if (labels.includes('In Progress')) {
-              console.log("Issue is in progress.");
-              core.setOutput('status', 'in_progress');
-            } else {
-              console.log("Issue is not in progress.");
-              core.setOutput('status', 'not_in_progress');
-            }
-      
-      - name: Add comment if issue is "In Progress"
-        if: steps.check_status.outputs.status == 'in_progress'
-        uses: actions/github-script@v5
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            console.log("Adding comment to issue...");
             const issueNumber = context.issue.number;
             const commentBody = 'This issue is now In Progress.';
             github.issues.createComment({
